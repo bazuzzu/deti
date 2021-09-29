@@ -465,3 +465,6 @@ select {
 #boys .text-3xl {
 	display: none;
 }
+#boys h1.act {
+	color:#faba09;
+}
