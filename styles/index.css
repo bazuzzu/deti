@@ -471,3 +471,9 @@ select {
 #boys:target .sunday-wrapper>a:last-child h1 {
 	color:#faba09 !important;
 }
+#boys:not(:target) .sunday-wrapper>a:first-child h1:hover {
+	color:#faba09 !important;
+}
+.text-orange {
+	color:#faba09 !important;
+}
