@@ -298,7 +298,7 @@ footer .vk-link:hover svg path {
 
 .pane {
   border-radius: 0!important;
-  z-index: 9!important;
+  z-index: 12 !important;
 }
 .blackout {
 	display: block;
