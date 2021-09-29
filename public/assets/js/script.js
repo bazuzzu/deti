@@ -193,7 +193,7 @@ $( document ).ready(function() {
 	
 	$('#boys h1').click(function(){
 	  	$(this).addClass('act');
-		$('#boys h1).not(this).removeClass('act');
+		$('#boys h1').not(this).removeClass('act');
 	  })
 	
 	var maxh = Math.max.apply(Math,heightarr);
