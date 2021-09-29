@@ -21,11 +21,11 @@ class _CupertinoPane extends React.Component {
       },
 //	  draggableOver: false,
       onDidPresent: _ =>
-        disableBodyScroll(document.querySelector(".cupertino-pane>.container")),
+        enableBodyScroll(document.querySelector(".cupertino-pane>.container")),
       onWillDismiss: _ => {
         this.props.onCloseClick && this.props.onCloseClick()
         clearAllBodyScrollLocks()
-        enableBodyScroll(this.ref.current)
+        //enableBodyScroll(this.ref.current)
         false
       },
       ...this.props.settings,
