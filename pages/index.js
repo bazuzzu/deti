@@ -146,7 +146,7 @@ const Kids = ({ kids }) => {
           <a href="#girls">
             <h1
               className={classnames(
-                "font-sans mt-4 md:mt-8 lg:mb-8 text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-heavy tracking-tighter leading-tight md:pr-8 transition-colors duration-150 cursor-pointer text-black hover:text-gray-600"
+                "font-sans act mt-4 md:mt-8 lg:mb-8 text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-heavy tracking-tighter leading-tight md:pr-8 transition-colors duration-150 cursor-pointer text-black hover:text-gray-600"
               )}
             >
               ДЕВОЧКИ.
