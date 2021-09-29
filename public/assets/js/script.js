@@ -173,6 +173,12 @@ $( document ).ready(function() {
 	$('.add_filter_but').click(function(e){
 		e.preventDefault();
 		$('.add_filters').show();
+		$(this).addClass('active');
+	})
+	$('.add_filter_but.active').click(function(e){
+		e.preventDefault();
+		$('.add_filters').hide();
+		$(this).removeClass('active');
 	})
 	$('#resetfilters').click(function(){
 		$('.sunday-tab .object-cover').parent().show();
