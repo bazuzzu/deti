@@ -25,7 +25,7 @@ class _CupertinoPane extends React.Component {
       onWillDismiss: _ => {
         this.props.onCloseClick && this.props.onCloseClick()
         clearAllBodyScrollLocks()
-        //enableBodyScroll(this.ref.current)
+        enableBodyScroll(this.ref.current)
         false
       },
       ...this.props.settings,
