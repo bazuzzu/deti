@@ -191,7 +191,7 @@ $( document ).ready(function() {
 		$('.filters select').val(0);
 	});
 	
-	$('#boys h1).click(function(){
+	$('#boys h1').click(function(){
 	  	$(this).addClass('act');
 		$('#boys h1).not(this).removeClass('act');
 	  })
