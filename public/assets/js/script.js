@@ -175,7 +175,7 @@ $( document ).ready(function() {
 		$('.add_filters').show();
 		$(this).addClass('active');
 	})
-	$('.add_filter_but.active').click(function(e){
+	$('.add_filter_but.active').bind('click',function(e){
 		e.preventDefault();
 		$('.add_filters').hide();
 		$(this).removeClass('active');
