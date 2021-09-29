@@ -64,7 +64,7 @@ const Kids = ({ kids }) => {
         className={classnames({ "pointer-events-none": state.open })}
       >
  
-        <h2 className="text-3xl font-fancy pt-3 pr-12">Кастинг</h2>
+        <h2 className="text-3xl font-fancy pt-3 pr-12">DЕТИКИНО</h2>
         {state.open && (
           <CupertinoPane onCloseClick={_ => setState({ open: false })}>
             <div className="container mx-auto px-8">
