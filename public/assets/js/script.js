@@ -172,11 +172,15 @@ $( document ).ready(function() {
 	})
 	$('.add_filter_but').click(function(e){
 		e.preventDefault();
+		$(this).hide();
+		$('.add_filter_but_act').show();
 		$('.add_filters').show();
 		$(this).addClass('active');
 	})
-	$('.add_filter_but.active').bind('click',function(e){
+	$('.add_filter_but_act').click(function(e){
 		e.preventDefault();
+		$(this).hide();
+		$('.add_filter_but').show();
 		$('.add_filters').hide();
 		$(this).removeClass('active');
 	})
