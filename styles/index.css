@@ -466,5 +466,8 @@ select {
 	display: none;
 }
 #boys h1.act {
-	color:#faba09;
+	color:#faba09 !important;
+}
+#boys:target .sunday-wrapper>a:last-child h1 {
+	color:#faba09 !important;
 }
