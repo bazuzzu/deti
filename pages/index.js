@@ -165,6 +165,7 @@ const Kids = ({ kids }) => {
 		<a className="filtershow" href="#">Показать фильтры</a>
 	    <a className="filterhide" href="#">Скрыть фильтры</a>
 		<a className="add_filter_but" href="#">Дополнительные<br/>фильтры</a>
+		<a className="add_filter_but_act" href="#">Дополнительные<br/>фильтры</a>
 		<div className="filters">
 			<div>Возраст</div>
 			<div id="ageslider"></div>
