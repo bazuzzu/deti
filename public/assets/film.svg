@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 2 338.67 45"><defs><clipPath clipPathUnits="userSpaceOnUse" id="a"><path fill="purple" fill-opacity=".37" fill-rule="evenodd" stroke-width="1.49" d="M-769 634.95H497.45v144.73H-769z"/></clipPath><filter id="b" x="0" width="1" y="0" height="1" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation=".02"/></filter>
+<filter id="shadow">
+      <feDropShadow dx="2" dy="0" stdDeviation="3"/>
+    </filter>
+</defs><path filter="url(#shadow)" d="M0 0v47.62h338.67V0H0zm22.6 13.8h20.23c2.2 0 3.97 1.77 3.97 3.97v12.08c0 2.2-1.77 3.97-3.97 3.97H22.6a3.96 3.96 0 01-3.97-3.97V17.77c0-2.2 1.77-3.97 3.97-3.97zm275.48 0h20.24c2.2 0 3.97 1.77 3.97 3.97v12.08c0 2.2-1.77 3.97-3.97 3.97h-20.24a3.96 3.96 0 01-3.96-3.97V17.77c0-2.2 1.77-3.97 3.96-3.97z"/></svg>
