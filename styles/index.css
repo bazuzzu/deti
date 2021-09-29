@@ -465,7 +465,7 @@ select {
 #boys .text-3xl {
 	display: none;
 }
-#boys h1.act {
+#boys h1.act, #boys h1:hover {
 	color:#faba09 !important;
 }
 #boys:target .sunday-wrapper>a:last-child h1 {
