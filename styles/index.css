@@ -436,7 +436,15 @@ footer .vk-link:hover svg path {
 	float: right;
 	text-decoration: underline;
 	display: none;
+	text-align:right;
 }
+.add_filter_but_act {
+	float: right;
+	text-decoration: underline;
+	display: none;
+	text-align:right;
+}
+
 select {
 	background: #FFF;
 	padding: 5px;
