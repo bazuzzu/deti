@@ -56,7 +56,7 @@ const Contact = props => (
         <ColLeft>Телефон</ColLeft>
         <ColRight>
           <p>
-            <Link href="tel:+79660008997">+7 966 000 899 7</Link>
+            <Link href="tel:+79096904433">+7 (909) 690-44-33</Link>
           </p>
         </ColRight>
       </Row>
