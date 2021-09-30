@@ -515,7 +515,7 @@ select {
 }
 .blacklogo {
 	margin: auto;
-	width: 260px;
+	width: 200px;
 	background: url(/assets/detikino_logo_word_white-school_custom.png) center no-repeat;
 	height: 50px;
 	background-size: contain;
