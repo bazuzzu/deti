@@ -184,12 +184,7 @@ $( document ).ready(function() {
 		$('.add_filters').hide();
 		$(this).removeClass('active');
 	})
-	$('#resetfilters').click(function(){
-		$('.sunday-tab .object-cover').parent().show();
-		$('.sunday-tab .object-cover').parent().removeClass('hiddena');
-		$('.sunday-tab .object-cover').parent().removeClass('hiddenh');
-		$('.filters select').val(0);
-	});
+
 	
 	$('#boys h1').click(function(){
 	  	$(this).addClass('act');
@@ -198,52 +193,23 @@ $( document ).ready(function() {
 	
 	var maxh = Math.max.apply(Math,heightarr);
 	var minh = Math.min.apply(Math,heightarr);
-	$( "#heightslider" ).slider({
-		animate: "slow",
-		min: minh,
-		max: maxh,
-		range: true,    
-		values: [ minh, maxh],
-		slide : function(event, ui) {    
-            $("#result-height").text( "от " + ui.values[ 0 ] + " до " + ui.values[ 1 ] );
-			$('.sunday-tab .object-cover').each(function(){
-				if ($(this).attr('data-height')>=ui.values[ 0 ] && $(this).attr('data-height')<=ui.values[ 1 ]) {
-					if ($(this).parent().hasClass('hiddena')) {
-						//
-					} else {
-						$(this).parent().removeClass('hiddenh');
-					}
-				} else {
-					if ($(this).parent().hasClass('hiddena')) {
-						//
-					} else {
-						$(this).parent().addClass('hiddenh');
-					}
-					
-				}
-			});
-        }
-	});
-	$( "#result-height" ).text("от " + $("#heightslider").slider("values", 0) + " до " + $("#heightslider").slider("values", 1));
-	
-	var agearr = new Array();
-	$('.sunday-tab .object-cover').each(function(){
-		var age = $(this).attr('data-age');
-		agearr.push(age);  
-	});
-	var maxa = Math.max.apply(Math,agearr);
-	var mina = Math.min.apply(Math,agearr);
-	$( "#ageslider" ).slider({
-		animate: "slow",
-		min: mina,
-		max: maxa,
-		range: true,    
-		values: [ mina, maxa],
-		slide : function(event, ui) {    
-            $("#result-age").text( "от " + ui.values[ 0 ] + " до " + ui.values[ 1 ] );
-			$('.sunday-tab .object-cover').each(function(){
-				if ($(this).attr('data-age')>=ui.values[ 0 ] && $(this).attr('data-age')<=ui.values[ 1 ]) {
-					if ($(this).parent().hasClass('hiddenh')) {
+	$('#resetfilters').click(function(){
+		//$('.sunday-tab .object-cover').parent().show();
+		$('.sunday-tab .object-cover').parent().removeClass('hiddena');
+		$('.sunday-tab .object-cover').parent().removeClass('hiddenh');
+		$('.filters select').val(0);
+		$('#ageinputmmin').val(mina)
+		$('#ageinputmax').val(maxa)
+		$('#heightinputmin').val(minh)
+		$('#heightinputmax').val(maxh)
+	});	
+	$('.agefilt input').change(function(){
+		var minval=parseInt($('#ageinputmin').val());
+		var maxval=parseInt($('#ageinputmax').val());
+		setTimeout(function(){
+        $('.sunday-tab .object-cover').each(function(){
+            if ($(this).attr('data-age')>=minval && $(this).attr('data-age')<=maxval) {
+				if ($(this).parent().hasClass('hiddenh')) {
 						//
 					} else {
 						$(this).parent().removeClass('hiddena');
@@ -255,8 +221,50 @@ $( document ).ready(function() {
 						$(this).parent().addClass('hiddena');
 					}
 				}
-			});
-        }
+        });		
+			
+		},500)
+	})
+	$('#heightinputmin').val(minh);
+	$('#heightinputmax').val(maxh);
+	
+	var agearr = new Array();
+	$('.sunday-tab .object-cover').each(function(){
+		var age = $(this).attr('data-age');
+		agearr.push(age);  
 	});
-	$( "#result-age" ).text("от " + $("#ageslider").slider("values", 0) + " до " + $("#ageslider").slider("values", 1));
+	var maxa = Math.max.apply(Math,agearr);
+	var mina = Math.min.apply(Math,agearr);
+	$('#ageinputmin').val(mina);
+	$('#ageinputmax').val(maxa);
+	$('.heightfilt input').change(function(){
+		var minval=parseInt($('#heightinputmin').val());
+		var maxval=parseInt($('#heightinputmax').val());
+		if ($('#heightinputmin').val()<minh) {
+			$('#heightinputmin').val(minh);
+		} else if ($('#heightinputmax').val()>maxh) {
+			$('#heightinputmax').val(maxh);			
+		} else {
+			$('.sunday-tab .object-cover').each(function(){
+				if ($(this).attr('data-height')>=minval && $(this).attr('data-height')<=maxval) {
+						if ($(this).parent().hasClass('hiddena')) {
+							//
+						} else {
+							$(this).parent().removeClass('hiddenh');
+						}
+					} else {
+						if ($(this).parent().hasClass('hiddena')) {
+							//
+						} else {
+							$(this).parent().addClass('hiddenh');
+						}
+
+					}
+				});
+			
+		}
+
+			
+	})	
+
 })
