@@ -125,7 +125,7 @@ $( document ).ready(function() {
 		var constval = $(this).find('option:selected').text();
 		var attname = $(this).parent().attr('id');
 		
-		$('.sunday-tab .object-cover').parent().show();
+		$('.sunday-tab .object-cover').parent().css('display', 'inline-block');
 		if (constval=='-') {
 			var key = attname;
 			delete filterarr[key];
