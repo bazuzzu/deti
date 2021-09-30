@@ -46,9 +46,9 @@ export default function Footer() {
               <li>
                 <a
                   className="text-gray-600 hover:text-gray-800"
-                  href="tel:+79660008997"
+                  href="tel:+79096904433"
                 >
-                  +7 966 000 899 7
+                  +7 (909) 690-44-33
                 </a>
               </li>
               <li>
