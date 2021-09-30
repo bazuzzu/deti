@@ -534,6 +534,7 @@ select {
 	padding: 5px;
 	border-radius: 3px;
 	-webkit-appearance:none;
+	color: #000 !important;s
 
 }
 .blacklogo {
