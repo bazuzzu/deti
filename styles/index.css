@@ -53,7 +53,7 @@
 
 * {
 	font-family:'Poiret One' !important;
-	font-weight:600;
+	font-weight:600 !important;
 }
 
 #sunday .sunday-tab>div {
