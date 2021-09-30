@@ -19,9 +19,9 @@ import { getKids } from "../lib/api"
 
 
 
-//const extractPhoto = s => s.split(", ")[0].replace(/open/, "thumbnail")
+const extractPhoto = s => s.split(", ")[0].replace(/open/, "thumbnail")
 const testAllphoto = s => s.split(" , ")
-//const extractTube = s =>
+const extractTube = s =>
   s ? s.split(/,| /).filter(s => /youtu.be/.test(s)) : []
 
 const Row = ({ children }) => (
