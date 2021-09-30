@@ -450,9 +450,17 @@ footer .vk-link:hover svg path {
 		font-size: 2rem !important;
 	}
 	.cupertino-pane-wrapper .h-72 {
-		height: 30rem;
+		height: 30rem !important;
 	}
-
+	.cupertino-pane-wrapper .pane  {
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+	.slideholder {
+		width: 100% !important;
+		max-width: 100% !important;
+		margin: auto;
+	}
 }
 .sunday-tab .text-gray-600 svg {
 	color: rgba(247, 197, 9, var(--tw-text-opacity));
@@ -702,4 +710,15 @@ body::-webkit-scrollbar {
   border: 3px solid rgba(62,63,66,1);  /* creates padding around scroll thumb */
 }.cupertino-pane-wrapper .destroy-button {
 	right: 30px;
+}
+.darkmode input {
+	color: #000 !important;
+}
+.photo_arr {
+	display: none;
+}
+.slideholder {
+	width: 500px;
+	max-width: 500px;
+	margin: auto;
 }
