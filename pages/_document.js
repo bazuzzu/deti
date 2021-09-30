@@ -13,11 +13,17 @@ export default class MyDocument extends Document {
           <link
             href="/assets/css/jquery-ui.css"
             rel="stylesheet"
+          />
+		  <link
+            href="/assets/css/swipeslider.css"
+            rel="stylesheet"
           />		
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script src="/assets/js/script.js"></script>
 		<script src="/assets/js/jquery-ui.min.js"></script>
 		<script src="/assets/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="/assets/js/swipeslider.js"></script>
+		
         </Head>
         <body className="bg-gray-100 darkmode font-fancy font-light text-black">
           <Main />
