@@ -113,6 +113,18 @@ const Kids = ({ kids }) => {
                   <hr className="my-3" />
                   <div className="mt-3">
                     <p className="mb-2">Рост {state.height} см</p>
+                    <p className="mb-2">Телосложение {state.constitution}</p>
+                    <p className="mb-2">Цвет глаз {state.eyes}</p>
+                    <p className="mb-2">Цвет волос {state.hair}</p>
+                    <p className="mb-2">Длина волос {state.hairlength}</p>
+                    <p className="mb-2">Готов(а) красить волосы {state.colorready}</p>
+                    <p className="mb-2">Готов(а) стричься наголо {state.cutready}</p>
+                    <p className="mb-2">Тип внешности {state.type}</p>
+                    <p className="mb-2">Иностранные языки {state.languages}</p>
+                    <p className="mb-2">Вокал {state.vocal}</p>
+                    <p className="mb-2">Музыкальные инструменты {state.instruments}</p>
+
+
                     <div className="flex items-center"></div>
                   </div>
                   <div>
@@ -272,6 +284,16 @@ const Kids = ({ kids }) => {
                             age,
                             height,
                             links,
+							constitution, 
+							eyes, 
+							hair, 
+							hairlength, 
+							colorready, 
+							cutready, 
+							type, 
+							languages, 
+							vocal, 
+							instruments,
                           })
                         }
                       >
