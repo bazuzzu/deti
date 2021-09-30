@@ -635,5 +635,5 @@ select {
 	color:#FFF !important;
 }
 x.bg-gray-100bg-gray-100  {
-	background-color: rgb(62,63,66) !importnat;
+	background-color: rgba(62,63,66,1) !importnat;
 }
