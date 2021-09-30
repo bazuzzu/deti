@@ -366,7 +366,8 @@ footer .vk-link:hover svg path {
 		margin: 0 0 5px 0;
 	}
 	.sunday-tab .mb-8 {
-		margin-right: 2px !important;
+		margin-right: 1px !important;
+		margin-left:1px !important;
 	}
 	.sunday-tab .mb-8:nth-of-type(even) {
 		margin-left: 0px !important;
