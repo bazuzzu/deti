@@ -536,7 +536,7 @@ select {
 	-webkit-appearance:none;
 	color: #000 !important;
 }
-.darkmode select {
+.darkmode select option {
 	color: #000 !important;
 }
 .blacklogo {
