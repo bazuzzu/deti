@@ -17,7 +17,10 @@ import classnames from "classnames"
 import CupertinoPane from "../components/cupertino-pane"
 import { getKids } from "../lib/api"
 
-//const extractPhoto = s => s.split(", ")[0].replace(/open/, "thumbnail").replace(' ','')+'&sz=w800'
+
+
+const extractPhoto = s => s.split(", ")[0].replace(/open/, "thumbnail").replace(' ','')+'&sz=w800'
+const testAllphoto = s => s.split(" , ")
 const extractTube = s =>
   s ? s.split(/,| /).filter(s => /youtu.be/.test(s)) : []
 
@@ -325,7 +328,7 @@ const Kids = ({ kids }) => {
                       >
                         <img
                           className="object-cover kidcard object-top h-56 w-48"
-                          src={`${photo}`}
+                          src={extractPhoto(photo)}
                           alt={`${name.trim()} ${surname.trim()}`}
 						  data-height={`${height}`}
 						  data-age={`${age}`}
@@ -339,6 +342,8 @@ const Kids = ({ kids }) => {
 						  data-languages={`${languages}`}
 						  data-vocal={`${vocal}`}
 						  data-instruments={`${instruments}`}
+						  data-allphoto={`${photo}`}
+						  data-allphotoarr=""
                           referrerPolicy="no-referrer"
                         />
 						
