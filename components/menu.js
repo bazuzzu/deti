@@ -30,9 +30,8 @@ const Menu = props => (
           <Logo className="mb-8 text-center transform scale-125 sm:scale-150" />
         </a>
         <div className="mb-8 w-full mainmenu">
-          <Link href="#">Расписание</Link>
-          <Link href="#">Команда</Link>
-          <Link href="#">Кастинг</Link>
+          <Link href="#">Услуги</Link>
+          <Link href="#">О нас</Link>
           <Link href="/contact">Контакты</Link>
         </div>
         <div>
@@ -42,9 +41,9 @@ const Menu = props => (
           <p className="text-xs">
             <a
               className="text-white hover:bg-white hover:text-black border border-white font-bold py-3 px-4 sm:px-8 duration-150 transition-colors mb-6 lg:mb-0"
-              href="tel:+79660008997"
+              href="tel:+79096904433"
             >
-              +7 966 000 899 7
+              +7 (909) 690-44-33
             </a>
           </p>
         </div>
