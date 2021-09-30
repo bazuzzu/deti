@@ -117,13 +117,41 @@ const Kids = ({ kids }) => {
                   <hr className="my-3" />
                   <div className="mt-3">
                     <p className="mb-2">Рост {state.height} см</p>
+ 					{!!state.vocal.constitution && (
+                      <>
                     <p className="mb-2">Телосложение: {state.constitution}</p>
+					  </>
+					)}
+ 					{!!state.eyes.length && (
+                      <>
                     <p className="mb-2">Цвет глаз: {state.eyes}</p>
+					  </>
+					)}
+ 					{!!state.hair.length && (
+                      <>
                     <p className="mb-2">Цвет волос: {state.hair}</p>
+					  </>
+					)}
+ 					{!!state.type.length && (
+                      <>
                     <p className="mb-2">Тип внешности: {state.type}</p>
+					  </>
+					)}
+ 					{!!state.languages.length && (
+                      <>
                     <p className="mb-2">Иностранные языки: {state.languages}</p>
-                    <p className="mb-2">Вокал: {state.vocal}</p>
+					  </>
+					)}
+ 					{!!state.vocal.length && (
+                      <>
+                    	<p className="mb-2">Вокал: {state.vocal}</p>
+					  </>
+					)}
+ 					{!!state.instruments.length && (
+                      <>
                     <p className="mb-2">Музыкальные инструменты: {state.instruments}</p>
+					  </>
+					)}
 
 					<br/>
 
