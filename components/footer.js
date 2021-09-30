@@ -6,7 +6,7 @@ import { EXAMPLE_PATH } from "../lib/constants"
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100">
+    <footer className="bg-gray-100 darkmode">
       <Container>
         <div className="py-28 flex flex-col sm:flex-row items-center justify-between footlogo">
           <a href="/">
@@ -22,17 +22,12 @@ export default function Footer() {
                   className="text-gray-600 hover:text-gray-800"
                   href="#"
                 >
-                  Расписание
+                  Услуги
                 </a>
               </li>
               <li>
                 <a className="text-gray-600 hover:text-gray-800" href="#">
-                  Команда
-                </a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800" href="#">
-                  Медиатека
+                  О нас
                 </a>
               </li>
               <li className="mb-3">

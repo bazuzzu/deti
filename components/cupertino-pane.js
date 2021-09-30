@@ -25,7 +25,7 @@ class _CupertinoPane extends React.Component {
       onWillDismiss: _ => {
         this.props.onCloseClick && this.props.onCloseClick()
         clearAllBodyScrollLocks()
-        //enableBodyScroll(this.ref.current)
+        enableBodyScroll(this.ref.current)
         false
       },
       ...this.props.settings,
@@ -43,7 +43,7 @@ class _CupertinoPane extends React.Component {
   render() {
     return (
       <div>
-        <div ref={this.ref} className=".cupertino-pane">
+        <div ref={this.ref} className="cupertino-pane">
           {this.props.children}
         </div>
       </div>

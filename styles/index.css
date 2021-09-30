@@ -294,7 +294,7 @@
 }
 
 .vk-link svg path {
-  fill: black;
+  fill: #FFF;
 }
 
 .vk-link:hover svg path {
@@ -302,16 +302,16 @@
 }
 
 footer .menu-social:hover {
-  border-bottom-color: #4b5563;
+  border-bottom-color: #FFF;
 }
 
 
 footer .vk-link svg path {
-  fill: #4b5563;
+  fill: #FFF;
 }
 
 footer .vk-link:hover svg path {
-  fill: #4b5563;
+  fill: #FFF;
 }
 
 .pane {
@@ -383,19 +383,19 @@ footer .vk-link:hover svg path {
 		margin: 0 0 5px 0;
 	}
 	.sunday-tab .mb-8:nth-of-type(odd) {
-		margin-right: 2px !important;
+		margin-right: 0 !important;
 	}
 	.sunday-tab .mb-8:nth-of-type(even) {
-		margin-left: 2px !important;
+		margin-left: 0px !important;
 	}	
 	.sunday-tab div.w-48 {
-		width: calc(50% - 2px) !important;
+		width: calc(50%) !important;
 	}
 	#boys .h-56 {
 		height: 14rem !important;
 	}
 	#boys .w-48 {
-		width: 12rem;
+		width: 14rem;
 	}
 	.px-5 {
 		padding-left: 5px;
@@ -445,6 +445,12 @@ footer .vk-link:hover svg path {
 	} 
 	.filtr {
 		margin-right: 2rem !important;
+	}
+	#boys .xl\:text-7xl {
+		font-size: 2rem !important;
+	}
+	.cupertino-pane-wrapper .h-72 {
+		height: 30rem;
 	}
 
 }
@@ -538,14 +544,14 @@ select {
 	background-size: contain;
 }
 .footlogo .blacklogo {
-    background: url(/assets/detikino_logo_word_white-school_custom2.png) center no-repeat;
+    background: url(/assets/detikino_logo_word_white-school_custom.png) center no-repeat;
 	background-size: contain;
 }
 .blacklogo.toplogo {
 	display: block;
-	background: url(/assets/detikino_logo_letter-d-black_custom.png) center no-repeat;
-    width: 160px;
-	height: 160px;
+	background: url(/assets/newlogo.png) center no-repeat;
+    width: 140px;
+	height: 120px;
 	background-size: contain;
 	margin: 3rem 0 0 0;
 	display:inline-block;
@@ -571,8 +577,8 @@ select {
 	width: 14.8rem
 }
 .mx-8 {
-	margin-left: 0.1rem;
-	margin-right: 0.1rem;
+	margin-left: 0;
+	margin-right: 0;
 	margin-bottom: 0.5rem;
 }
 .h-56 {
@@ -595,7 +601,7 @@ select {
 	color: #000;
 }
 .topcontacts a.menu-social:hover {
-	border-bottom-color:#000;
+	border-bottom-color:#FFF;
 }
 .footlogo .list-none {
 	text-align: right;
@@ -611,7 +617,7 @@ select {
 	padding-right: 4rem;
 }
 .topcontacts .vk-link:hover svg path {
-	fill:#000;
+	fill:#FFF;
 }
 #ageinputmin, #heightinputmin, #heightinputmax, #ageinputmax {
 	padding: 5px;
@@ -620,6 +626,7 @@ select {
 	border-radius: 3px;
 	width: 50px;
 	text-align: center;
+	color: #000 !important;
 }
 .filtr {
 	display: inline-block;
@@ -629,11 +636,67 @@ select {
 	width:100%;
 }
 .cupertino-pane-wrapper .h-72 {
-	height:28rem;
+	height:40rem;
 }
 .darkmode * {
 	color:#FFF !important;
 }
-x.bg-gray-100bg-gray-100  {
-	background-color: rgba(62,63,66,1) !importnat;
+.darkmode.bg-gray-100  {
+	background-color: rgba(62,63,66,1) !important;
+}
+#boys:not(:target) .sunday-wrapper>a:first-child h1 {
+	color: #FFF!important;
+
+}
+#boys:not(:target) .sunday-wrapper>a:first-child h1:hover {
+	color: #718096!important;
+
+}
+#boys:target .sunday-wrapper>a:last-child h1 {
+	color: #FFF!important;	
+}
+#boys:not(:target) .sunday-wrapper>a:last-child h1 {
+	color: #718096!important;	
+}
+#boys:not(:target) .sunday-wrapper>a:last-child h1:hover {
+	color: #FFF!important;	
+}
+#boys:target .sunday-wrapper>a:first-child h1 {
+	color: #718096!important;
+}#boys:target .sunday-wrapper>a:first-child h1:hover {
+	color: #FFF!important;	
+}
+.cupertino-pane-wrapper .pane {
+	background-color: #282828;;
+	max-width: 70%;
+}
+.cupertino-pane-wrapper button {
+	background-color: #718096!important;
+}
+.cupertino-pane-wrapper button:hover {
+	color: #718096!important;
+	background-color: #FFF !important;
+}
+.cupertino-pane-wrapper .max-w-lg {
+	max-width: 500px;
+}
+.destroy-button:hover {
+	cursor: pointer;
+}
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+.cupertino-pane::-webkit-scrollbar {
+    width: 10px;
+}
+.cupertino-pane::-webkit-scrollbar-track {
+  background: rgba(62,63,66,1);        /* color of the tracking area */
+}
+
+.cupertino-pane::-webkit-scrollbar-thumb {
+  background-color: #FFF;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid rgba(62,63,66,1);  /* creates padding around scroll thumb */
+}.cupertino-pane-wrapper .destroy-button {
+	right: 30px;
 }

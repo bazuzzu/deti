@@ -19,7 +19,7 @@ export default class MyDocument extends Document {
 		<script src="/assets/js/jquery-ui.min.js"></script>
 		<script src="/assets/js/jquery.ui.touch-punch.min.js"></script>
         </Head>
-        <body className="bg-gray-100 font-fancy font-light text-black">
+        <body className="bg-gray-100 darkmode font-fancy font-light text-black">
           <Main />
           <NextScript />
         </body>

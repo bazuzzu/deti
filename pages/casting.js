@@ -19,8 +19,7 @@ import { getKids } from "../lib/api"
 
 
 
-const extractPhoto = s => s.split(", ")[0].replace(/open/, "thumbnail").replace(' ','')+'&sz=w800'
-const testAllphoto = s => s.split(", ")
+const extractPhoto = s => s.split(", ")[0].replace(/open/, "thumbnail")
 const extractTube = s =>
   s ? s.split(/,| /).filter(s => /youtu.be/.test(s)) : []
 
@@ -58,43 +57,14 @@ const Kids = ({ kids }) => {
   return (
     <Layout>
       <Head>
-        <title>Актерское агенство школы-студии Detikino</title>
+        <title>Кастинг</title>
       </Head>
       <Container
         id="boys"
         className={classnames({ "pointer-events-none": state.open })}
       >
- 		<a href="/" className="blacklogo toplogo"></a>
-		
-		<div className="topcontacts">
-			<a href="tel:+79096904433">+7 (909) 690-44-33</a>
-			<a href="email:casting@detikino.ru">casting@detikino.ru</a>
-			<div>
-                  <a
-                    href="https://www.facebook.com/detikino2016/?hc_ref=NEWSFEED"
-                    target="_blank"
-                    className="menu-social"
-                  >
-                    <RiFacebookCircleLine className="h-7 w-7 p-1" />
-                  </a>
-                  <a
-                    href="https://www.instagram.com/detikino/"
-                    target="_blank"
-                    className="menu-social"
-                  >
-                    <RiInstagramLine className="h-7 w-7 p-1" />
-                  </a>
-                  <a
-                    href="https://vk.com/detikino2016"
-                    target="_blank"
-                    className="menu-social vk-link"
-                  >
-                    <VkIcon className="h-7 p-1" />
-                  </a>
-			</div>
-		</div>	
-        <h2 className="text-3xl font-fancy pt-3 pr-12">Актерское агенство школы-студии Detikino</h2>
-		<div className="clear"></div>
+ 
+        <h2 className="text-3xl font-fancy pt-3 pr-12">Кастинг</h2>
         {state.open && (
           <CupertinoPane onCloseClick={_ => setState({ open: false })}>
             <div className="container mx-auto px-8">
@@ -117,16 +87,6 @@ const Kids = ({ kids }) => {
                   <hr className="my-3" />
                   <div className="mt-3">
                     <p className="mb-2">Рост {state.height} см</p>
-                    <p className="mb-2">Телосложение: {state.constitution}</p>
-                    <p className="mb-2">Цвет глаз: {state.eyes}</p>
-                    <p className="mb-2">Цвет волос: {state.hair}</p>
-                    <p className="mb-2">Тип внешности: {state.type}</p>
-                    <p className="mb-2">Иностранные языки: {state.languages}</p>
-                    <p className="mb-2">Вокал: {state.vocal}</p>
-                    <p className="mb-2">Музыкальные инструменты: {state.instruments}</p>
-
-					<br/>
-
                     <div className="flex items-center"></div>
                   </div>
                   <div>
@@ -186,7 +146,7 @@ const Kids = ({ kids }) => {
           <a href="#girls">
             <h1
               className={classnames(
-                "font-sans mt-4 md:mt-8 lg:mb-8 text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-heavy tracking-tighter leading-tight md:pr-8 transition-colors duration-150 cursor-pointer text-orange hover:text-gray-600"
+                "font-sans mt-4 md:mt-8 lg:mb-8 text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-heavy tracking-tighter leading-tight md:pr-8 transition-colors duration-150 cursor-pointer text-black hover:text-gray-600"
               )}
             >
               ДЕВОЧКИ.
@@ -202,21 +162,16 @@ const Kids = ({ kids }) => {
             </h1>
           </a>
         </div>
-		<a className="filtershow" href="#">Фильтры</a>
-	    <a className="filterhide" href="#">Скрыть</a>
-
+		<a className="filtershow" href="#">Показать фильтры</a>
+	    <a className="filterhide" href="#">Скрыть фильтры</a>
+		<a className="add_filter_but" href="#">Дополнительные<br/>фильтры</a>
 		<div className="filters">
-			<a className="add_filter_but" href="#">Дополнительно</a>
-			<a className="add_filter_but_act" href="#">Дополнительно</a>			
-			<div className="agefilt filtr">
-			<div>Возраст</div><br/>
-			от <input id="ageinputmin" type="text" /> до <input id="ageinputmax" type="text" />
-			</div>
-			<div className="heightfilt filtr">
-			<div>Рост</div><br/>
-			от <input id="heightinputmin" type="text" /> до <input id="heightinputmax" type="text" />
-			</div>
-
+			<div>Возраст</div>
+			<div id="ageslider"></div>
+			<div id="result-age"></div>
+			<div>Рост</div>
+			<div id="heightslider"></div>
+			<div id="result-height"></div>
 			<div className="add_filters">
 				<div className="filterselect" id="constitution">
 					<div>Телосложение</div>
@@ -286,16 +241,6 @@ const Kids = ({ kids }) => {
                             age,
                             height,
                             links,
-							constitution, 
-							eyes, 
-							hair, 
-							hairlength, 
-							colorready, 
-							cutready, 
-							type, 
-							languages, 
-							vocal, 
-							instruments,
                           })
                         }
                       >
@@ -315,8 +260,6 @@ const Kids = ({ kids }) => {
 						  data-languages={`${languages}`}
 						  data-vocal={`${vocal}`}
 						  data-instruments={`${instruments}`}
-						  data-allphoto={`${photo}`}
-						  data-allphotoarr=""
                           referrerPolicy="no-referrer"
                         />
                         <p className="text-xl font-fancy font-bold mt-2">
