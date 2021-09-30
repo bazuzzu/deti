@@ -52,7 +52,7 @@
 }
 
 * {
-	font-family:'Poiret One';
+	font-family:'Poiret One' !important;
 }
 
 #sunday .sunday-tab>div {
