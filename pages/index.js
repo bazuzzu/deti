@@ -113,16 +113,16 @@ const Kids = ({ kids }) => {
                   <hr className="my-3" />
                   <div className="mt-3">
                     <p className="mb-2">Рост {state.height} см</p>
-                    <p className="mb-2">Телосложение: {state.constitution}</p>
-                    <p className="mb-2">Цвет глаз: {state.eyes}</p>
-                    <p className="mb-2">Цвет волос: {state.hair}</p>
-                    <p className="mb-2">Длина волос: {state.hairlength}</p>
-                    <p className="mb-2">Готов(а) красить волосы: {state.colorready}</p>
-                    <p className="mb-2">Готов(а) стричься наголо: {state.cutready}</p>
-                    <p className="mb-2">Тип внешности: {state.type}</p>
-                    <p className="mb-2">Иностранные языки: {state.languages}</p>
-                    <p className="mb-2">Вокал: {state.vocal}</p>
-                    <p className="mb-2">Музыкальные инструменты: {state.instruments}</p>
+                    <p className="mb-2">Телосложение: <span>{state.constitution}</span></p>
+                    <p className="mb-2">Цвет глаз: <span>{state.eyes}</span></p>
+                    <p className="mb-2">Цвет волос: <span>{state.hair}</span></p>
+                    <p className="mb-2">Длина волос: <span>{state.hairlength}</span></p>
+                    <p className="mb-2">Готов(а) красить волосы: <span>{state.colorready}</span></p>
+                    <p className="mb-2">Готов(а) стричься наголо: <span>{state.cutready}</span></p>
+                    <p className="mb-2">Тип внешности: <span>{state.type}</span></p>
+                    <p className="mb-2">Иностранные языки: <span>{state.languages}</span></p>
+                    <p className="mb-2">Вокал: <span>{state.vocal}</span></p>
+                    <p className="mb-2">Музыкальные инструменты: <span>{state.instruments}</span></p>
 
 
                     <div className="flex items-center"></div>
