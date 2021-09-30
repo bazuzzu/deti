@@ -520,14 +520,28 @@ select {
 }
 .blacklogo.toplogo {
 	display: block;
-	background: url(/assets/detikino_logo_word-white_custom.png) center no-repeat;
-    width: 320px;
-	height: 80px;
+	background: url(/assets/detikino_logo_letter-d-black_custom.png) center no-repeat;
+    width: 160px;
+	height: 160px;
 	background-size: contain;
-	margin: 1rem 0 0 0;
+	margin: 3rem 0 0 0;
+	display:inline-block;
+	float: left;
 }
 #boys .text-3xl {
-
+	display: inline-block;
+	float: left;
+	width: 350px;
+	margin-top: 3.5rem
+}
+#boys .xl\:text-7xl {
+	font-size: 3rem;
+}
+.topcontacts {
+	margin-top: 4rem;
+}
+.clear {
+	clear:both;
 }
 
 .w-48 {
