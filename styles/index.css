@@ -631,3 +631,9 @@ select {
 .cupertino-pane-wrapper .h-72 {
 	height:28rem;
 }
+.darkmode * {
+	color:#FFF !important;
+}
+.darkmode .bg-gray-100  {
+	background: rgb(62,63,66) !importnat;
+}
