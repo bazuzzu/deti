@@ -273,6 +273,7 @@
 }
 .filters {
 	display: none;
+	position: relative;
 }
 
 .vk-link svg path {
@@ -362,17 +363,66 @@ footer .vk-link:hover svg path {
 		width: 100%;
 	}
 	.sunday-tab .mb-8 {
-		margin: 0 0 15px 0;
+		margin: 0 0 5px 0;
 	}
 	.sunday-tab .mb-8:nth-of-type(odd) {
-		margin-right: 5px;
+		margin-right: 2px !important;
 	}
 	.sunday-tab .mb-8:nth-of-type(even) {
-		margin-left: 5px;
+		margin-left: 2px !important;
 	}	
 	.sunday-tab div.w-48 {
-		width: calc(50% - 5px);
+		width: calc(50% - 2px) !important;
 	}
+	#boys .h-56 {
+		height: 14rem !important;
+	}
+	#boys .w-48 {
+		width: 12rem;
+	}
+	.px-5 {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	.ui-slider {
+		width: 96%;
+		margin: auto;
+	}
+	.blacklogo.toplogo {
+		width: 310px !important;
+		margin-top: 4rem !important;
+	}
+	.topcontacts {
+		position: absolute;
+		left: 5px;
+		top: 10px;
+		text-align: left !important;
+	}
+	.topcontacts a {
+		display: inline-block !important;
+		margin-right: 10px;
+	}
+	#boys .text-3xl {
+		position: relative;
+		top: -1rem;
+	}
+	.footlogo .list-none {
+		text-align: left !important;
+	}
+	.footlogo .px-12 {
+		padding-left: 3rem !important;
+		padding-right: 3rem !important;
+	}
+	.add_filter_but, .add_filter_but_act {
+		position: absolute;
+		top: -64px;
+		right: 5px;
+		margin-right: 0 !important;
+	} 
+	.filtr {
+		margin-right: 2rem !important;
+	}
+
 }
 .sunday-tab .text-gray-600 svg {
 	color: rgba(247, 197, 9, var(--tw-text-opacity));
@@ -421,6 +471,7 @@ footer .vk-link:hover svg path {
 	display: inline-block;
 	margin-bottom: 30px;
 	text-decoration: underline;
+	font-size: 24px;
 }
 .filtershow:hover, .filterhide:hover {
 	text-decoration: none;
@@ -437,18 +488,22 @@ footer .vk-link:hover svg path {
 	text-decoration: underline;
 	display: none;
 	text-align:right;
+	font-size: 24px;
+	margin-right: 4rem;
 }
 .add_filter_but_act {
 	float: right;
 	text-decoration: underline;
 	display: none;
 	text-align:right;
+	font-size: 24px;
+	margin-right: 4rem;
 }
-
 select {
 	background: #FFF;
 	padding: 5px;
 	border-radius: 3px;
+	-webkit-appearance:none;
 
 }
 .blacklogo {
@@ -462,18 +517,82 @@ select {
     background: url(/assets/detikino_logo_word_white-school_custom2.png) center no-repeat;
 	background-size: contain;
 }
+.blacklogo.toplogo {
+	display: block;
+	background: url(/assets/detikino_logo_word-white_custom.png) center no-repeat;
+    width: 320px;
+	height: 80px;
+	background-size: contain;
+	margin: 3rem 0 0 0;
+}
 #boys .text-3xl {
-	display: none;
-}
-#boys h1.act, #boys h1:hover {
-	color:#faba09 !important;
-}
-#boys:target .sunday-wrapper>a:last-child h1 {
-	color:#faba09 !important;
-}
-#boys:not(:target) .sunday-wrapper>a:first-child h1:hover {
-	color:#faba09 !important;
+
 }
 .text-orange {
-	color:#faba09 !important;
+	color: #faba09;
+}
+#boys:target .sunday-wrapper>a:last-child h1 {
+	color: #faba09 !important; 
+}
+#boys:not(:target) .sunday-wrapper>a:first-child h1:hover {
+	color: #faba09 !important; 
+}
+
+.w-48 {
+	width: 14.8rem
+}
+.mx-8 {
+	margin-left: 0.1rem;
+	margin-right: 0.1rem;
+	margin-bottom: 0.5rem;
+}
+.h-56 {
+	height: 17rem;
+}
+.topcontacts {
+	float: right;
+	margin-right: 4rem;
+	text-align: right;
+}
+.topcontacts a {
+	display: block;
+}
+.topcontacts a.menu-social {
+	display: inline-block;
+	margin-top: 5px;
+}
+.topcontacts a.menu-social {
+
+	color: #000;
+}
+.topcontacts a.menu-social:hover {
+	border-bottom-color:#000;
+}
+.footlogo .list-none {
+	text-align: right;
+}
+.footlogo .w-4\/5 {
+	width: 100%;
+}
+.footlogo .mr-auto {
+	margin-right: 0;
+}
+.footlogo .px-12 {
+	padding-left: 2rem;
+	padding-right: 4rem;
+}
+.topcontacts .vk-link:hover svg path {
+	fill:#000;
+}
+#ageinputmin, #heightinputmin, #heightinputmax, #ageinputmax {
+	padding: 5px;
+	background: #FFF;
+	outline: none;
+	border-radius: 3px;
+	width: 50px;
+	text-align: center;
+}
+.filtr {
+	display: inline-block;
+	margin-right: 4rem;
 }
