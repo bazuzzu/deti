@@ -608,3 +608,6 @@ select {
 	display: inline-block;
 	margin-right: 4rem;
 }
+.cupertino-pane-wrapper .w-56 {
+	width:100%;
+}
