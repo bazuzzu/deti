@@ -57,14 +57,40 @@ const Kids = ({ kids }) => {
   return (
     <Layout>
       <Head>
-        <title>DЕТИКИНО</title>
+        <title>Кастинг</title>
       </Head>
       <Container
         id="boys"
         className={classnames({ "pointer-events-none": state.open })}
       >
- 
-        <h2 className="text-3xl font-fancy pt-3 pr-12">DЕТИКИНО</h2>
+ 		<a href="/" className="blacklogo toplogo"></a>
+		<div className="topcontacts">
+			<a href="tel:+79096904433">+7 (909) 690-44-33</a>
+			<a href="email:casting@detikino.ru">casting@detikino.ru</a>
+
+                  <a
+                    href="https://www.facebook.com/detikino2016/?hc_ref=NEWSFEED"
+                    target="_blank"
+                    className="menu-social"
+                  >
+                    <RiFacebookCircleLine className="h-7 w-7 p-1" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/detikino/"
+                    target="_blank"
+                    className="menu-social"
+                  >
+                    <RiInstagramLine className="h-7 w-7 p-1" />
+                  </a>
+                  <a
+                    href="https://vk.com/detikino2016"
+                    target="_blank"
+                    className="menu-social vk-link"
+                  >
+                    <VkIcon className="h-7 p-1" />
+                  </a>
+		</div>	
+        <h2 className="text-3xl font-fancy pt-3 pr-12">Актерское агенство школы-студии Detikino</h2>
         {state.open && (
           <CupertinoPane onCloseClick={_ => setState({ open: false })}>
             <div className="container mx-auto px-8">
@@ -146,7 +172,7 @@ const Kids = ({ kids }) => {
           <a href="#girls">
             <h1
               className={classnames(
-                "font-sans mt-4 md:mt-8 lg:mb-8 text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-heavy tracking-tighter leading-tight md:pr-8 transition-colors duration-150 cursor-pointer text-black hover:text-gray-600"
+                "font-sans mt-4 md:mt-8 lg:mb-8 text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-heavy tracking-tighter leading-tight md:pr-8 transition-colors duration-150 cursor-pointer text-orange hover:text-gray-600"
               )}
             >
               ДЕВОЧКИ.
@@ -162,17 +188,21 @@ const Kids = ({ kids }) => {
             </h1>
           </a>
         </div>
-		<a className="filtershow" href="#">Показать фильтры</a>
-	    <a className="filterhide" href="#">Скрыть фильтры</a>
-		<a className="add_filter_but" href="#">Дополнительные<br/>фильтры</a>
-		<a className="add_filter_but_act" href="#">Дополнительные<br/>фильтры</a>
+		<a className="filtershow" href="#">Фильтры</a>
+	    <a className="filterhide" href="#">Скрыть</a>
+
 		<div className="filters">
-			<div>Возраст</div>
-			<div id="ageslider"></div>
-			<div id="result-age"></div>
-			<div>Рост</div>
-			<div id="heightslider"></div>
-			<div id="result-height"></div>
+			<a className="add_filter_but" href="#">Дополнительно</a>
+			<a className="add_filter_but_act" href="#">Дополнительно</a>			
+			<div className="agefilt filtr">
+			<div>Возраст</div><br/>
+			от <input id="ageinputmin" type="text" /> до <input id="ageinputmax" type="text" />
+			</div>
+			<div className="heightfilt filtr">
+			<div>Рост</div><br/>
+			от <input id="heightinputmin" type="text" /> до <input id="heightinputmax" type="text" />
+			</div>
+
 			<div className="add_filters">
 				<div className="filterselect" id="constitution">
 					<div>Телосложение</div>
