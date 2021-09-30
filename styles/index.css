@@ -534,9 +534,9 @@ select {
 	padding: 5px;
 	border-radius: 3px;
 	-webkit-appearance:none;
-	color: #000 !important;
+	color: #000 !important; 
 }
-.darkmode select option {
+.darkmode select, .darkmode option {
 	color: #000 !important;
 }
 .blacklogo {
