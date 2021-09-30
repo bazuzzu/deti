@@ -19,7 +19,7 @@ import { getKids } from "../lib/api"
 
 
 
-const extractPhoto = s => s.split(", ")[0].replace(/open/, "thumbnail")+'&sz=w800'
+const extractPhoto = s => s.split(", ")[0].replace(/open/, "thumbnail").replace(' ','&sz=w800')
 const extractTube = s =>
   s ? s.split(/,| /).filter(s => /youtu.be/.test(s)) : []
 
