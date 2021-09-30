@@ -57,7 +57,7 @@ const Kids = ({ kids }) => {
   return (
     <Layout>
       <Head>
-        <title>Кастинг</title>
+        <title>Актерское агенство школы-студии Detikino</title>
       </Head>
       <Container
         id="boys"
