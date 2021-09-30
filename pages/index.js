@@ -20,7 +20,7 @@ import { getKids } from "../lib/api"
 
 
 const extractPhoto = s => s.split(", ")[0].replace(/open/, "thumbnail").replace(' ','')+'&sz=w800'
-const testAllphoto = s => s.split(", ")
+const testAllphoto = s => s.split(" , ")
 const extractTube = s =>
   s ? s.split(/,| /).filter(s => /youtu.be/.test(s)) : []
 
@@ -99,13 +99,11 @@ const Kids = ({ kids }) => {
           <CupertinoPane onCloseClick={_ => setState({ open: false })}>
             <div className="container mx-auto px-8">
               <div>
-                <div className="w-full h-72 pt-3 select-none">
-                  <img
-                    className="w-56 h-full mx-auto object-top object-cover max-w-lg"
-                    src={extractPhoto(state.photo || "")}
-                    alt={`${state.name} ${state.surname}`}
-                    referrerPolicy="no-referrer"
-                  />
+   			    <div className="photo_arr">{state.photo}</div>
+
+                <div className="w-full h-72 pt-3 select-none slideholder swipeslider">
+					<ul className="sw-slides">
+					</ul>		
                 </div>
                 <div className="w-full max-w-lg mx-auto mt-3">
                   <h3 className="text-gray-700 text-3xl mb-3">
@@ -130,6 +128,21 @@ const Kids = ({ kids }) => {
  					{!!state.hair.length && (
                       <>
                     <p className="mb-2">Цвет волос: {state.hair}</p>
+					  </>
+					)}
+ 					{!!state.hairlength.length && (
+                      <>
+                    <p className="mb-2">Длина волос: {state.hairlength}</p>
+					  </>
+					)}
+ 					{!!state.colorready.length && (
+                      <>
+                    <p className="mb-2">Готов(а) красить волосы: {state.colorready}</p>
+					  </>
+					)}
+ 					{!!state.cutready.length && (
+                      <>
+                    <p className="mb-2">Готов(а) стричься налысо: {state.cutready}</p>
 					  </>
 					)}
  					{!!state.type.length && (
@@ -175,9 +188,11 @@ const Kids = ({ kids }) => {
                               "$1"
                             )}`}
                             title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
+                            frameBorder="0"
+							width="100%"
+							height="300"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                         
                           ></iframe>
                         ))}
                         <hr className="mb-3" />
@@ -262,22 +277,6 @@ const Kids = ({ kids }) => {
 					<div>Длина волос</div>
 					<select></select>
 				</div>
-				<div className="filterselect" id="colorready">
-					<div>Готов(а) красить волосы</div>
-					<select></select>
-				</div>
-				<div className="filterselect" id="cutready">
-					<div>Готов(а) стричься наголо</div>
-					<select></select>
-				</div>
-				<div className="filterselect" id="type">
-					<div>Тип внешности</div>
-					<select></select>
-				</div>
-				<div className="filterselect" id="colorready">
-					<div>Готов красить волосы</div>
-					<select></select>
-				</div>
 				<div className="filterselect" id="languages">
 					<div>Иностранные языки</div>
 					<select></select>
@@ -328,7 +327,7 @@ const Kids = ({ kids }) => {
                         }
                       >
                         <img
-                          className="object-cover object-top h-56 w-48"
+                          className="object-cover kidcard object-top h-56 w-48"
                           src={extractPhoto(photo)}
                           alt={`${name.trim()} ${surname.trim()}`}
 						  data-height={`${height}`}
@@ -347,6 +346,7 @@ const Kids = ({ kids }) => {
 						  data-allphotoarr=""
                           referrerPolicy="no-referrer"
                         />
+						
                         <p className="text-xl font-fancy font-bold mt-2">
                           {name.trim()} {surname.trim()}
                         </p>
