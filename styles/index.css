@@ -529,15 +529,6 @@ select {
 #boys .text-3xl {
 
 }
-.text-orange {
-	color: #faba09;
-}
-#boys:target .sunday-wrapper>a:last-child h1 {
-	color: #faba09 !important; 
-}
-#boys:not(:target) .sunday-wrapper>a:first-child h1:hover {
-	color: #faba09 !important; 
-}
 
 .w-48 {
 	width: 14.8rem
