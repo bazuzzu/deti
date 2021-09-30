@@ -91,6 +91,7 @@ const Kids = ({ kids }) => {
                   </a>
 		</div>	
         <h2 className="text-3xl font-fancy pt-3 pr-12">Актерское агенство школы-студии Detikino</h2>
+        <div className="clear"></div>
         {state.open && (
           <CupertinoPane onCloseClick={_ => setState({ open: false })}>
             <div className="container mx-auto px-8">
