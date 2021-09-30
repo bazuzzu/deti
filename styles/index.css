@@ -611,3 +611,6 @@ select {
 .cupertino-pane-wrapper .w-56 {
 	width:100%;
 }
+.cupertino-pane-wrapper .h-72 {
+	height:28rem;
+}
