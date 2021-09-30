@@ -341,8 +341,6 @@ const Kids = ({ kids }) => {
 						  data-languages={`${languages}`}
 						  data-vocal={`${vocal}`}
 						  data-instruments={`${instruments}`}
-						  data-allphoto={`${photo}`}
-						  data-allphotoarr=""
                           referrerPolicy="no-referrer"
                         />
 						
