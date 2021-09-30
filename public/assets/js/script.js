@@ -194,7 +194,7 @@ $( document ).ready(function() {
 	var maxh = Math.max.apply(Math,heightarr);
 	var minh = Math.min.apply(Math,heightarr);
 	$('#resetfilters').click(function(){
-		//$('.sunday-tab .object-cover').parent().show();
+		$('.sunday-tab .object-cover').parent().css('display', 'inline-block')
 		$('.sunday-tab .object-cover').parent().removeClass('hiddena');
 		$('.sunday-tab .object-cover').parent().removeClass('hiddenh');
 		$('.filters select').val(0);
@@ -265,6 +265,8 @@ $( document ).ready(function() {
 		}
 
 			
-	})	
+	})
+	
+
 
 })
