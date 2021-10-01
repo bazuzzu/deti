@@ -683,7 +683,6 @@ select {
 }
 .cupertino-pane-wrapper button {
 	background-color: #718096!important;
-	margin-bottom:2rem;
 }
 .cupertino-pane-wrapper button:hover {
 	color: #718096!important;
