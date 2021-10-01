@@ -18,7 +18,6 @@ import CupertinoPane from "../components/cupertino-pane"
 import { getKids } from "../lib/api"
 
 
-
 const extractPhoto = s => s.split(", ")[0].replace(/open/, "thumbnail")
 const testAllphoto = s => s.split(" , ")
 const extractTube = s =>
