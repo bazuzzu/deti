@@ -296,7 +296,7 @@ $( document ).ready(function() {
 
 		},10)
 		setTimeout(function(){
-			$('.cupertino-pane-wrapper.rendered .slideholder').swipeslider({autoPlay: true, swipe: true, prevNextButtons:false, autoPlayTimeout:5000 });
+			$('.cupertino-pane-wrapper.rendered .slideholder').swipeslider({autoPlay: true, swipe: true, prevNextButtons:false, autoPlayTimeout:5000, sliderHeight: '40rem' });
 		},20)
 
 	})
