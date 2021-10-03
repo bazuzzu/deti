@@ -19,7 +19,7 @@ import { getKids } from "../lib/api"
 
 
 
-const extractPhoto = s => s.split(", ")[0].replace(/open/, "thumbnail").replace(' ','')+'&sz=w800'
+const extractPhoto = s => s.split(", ")[0].replace(/open/, "thumbnail").replace(/\s/g,'')+'&sz=w800'
 const testAllphoto = s => s.split(" , ")
 const extractTube = s =>
   s ? s.split(/,| /).filter(s => /youtu.be/.test(s)) : []
@@ -67,9 +67,9 @@ const Kids = ({ kids }) => {
  		<a href="/" className="blacklogo toplogo"></a>
 		
 		<div className="topcontacts">
-			<a href="tel:+79096904433">+7 (909) 690-44-33</a>
-			<a href="email:casting@detikino.ru">casting@detikino.ru</a>
-			<div>
+			<a className="maincont" href="tel:+79096904433">+7 (909) 690-44-33</a>
+			<a className="maincont" href="email:casting@detikino.ru">casting@detikino.ru</a>
+			<div className="mainsocial">
                   <a
                     href="https://www.facebook.com/detikino2016/?hc_ref=NEWSFEED"
                     target="_blank"
@@ -93,7 +93,7 @@ const Kids = ({ kids }) => {
                   </a>
 			</div>
 		</div>	
-        <h2 className="text-3xl font-fancy pt-3 pr-12">Актерское агенство школы-студии Detikino</h2>
+        <h2 className="text-3xl font-fancy pt-3 pr-12">Актерское агенство<br/> школы-студии<br/> Detikino</h2>
 		<div className="clear"></div>
         {state.open && (
           <CupertinoPane onCloseClick={_ => setState({ open: false })}>
@@ -114,63 +114,130 @@ const Kids = ({ kids }) => {
                   </span>
                   <hr className="my-3" />
                   <div className="mt-3">
-                    <p className="mb-2">Рост {state.height} см</p>
- 					{!!state.vocal.constitution && (
+					<div className="flex-row">	
+                    	<div className="md:text-right align-top md:pr-20 text-gray-600 mb-2 md:w-6/12 fadein-left">Рост: </div><div className="mr-2 align-top md:pr-4 md:w-6/12 fadein">{state.height} см</div>
+					</div>	
+ 					{!!state.constitution.length && (
                       <>
-                    <p className="mb-2">Телосложение: {state.constitution}</p>
+					<div className="flex-row">	
+                    	<div className="md:text-right align-top md:pr-20 text-gray-600 mb-2 md:w-6/12 fadein-left">Телосложение: </div><div className="mr-2 align-top md:pr-4 md:w-6/12 fadein">{state.constitution}</div>
+					</div>	
 					  </>
 					)}
  					{!!state.eyes.length && (
                       <>
-                    <p className="mb-2">Цвет глаз: {state.eyes}</p>
+					<div className="flex-row">	
+                    	<div className="md:text-right align-top md:pr-20 text-gray-600 mb-2 md:w-6/12 fadein-left">Цвет глаз: </div><div className="mr-2 align-top md:pr-4 md:w-6/12 fadein">{state.eyes}</div>
+					</div>	
 					  </>
 					)}
  					{!!state.hair.length && (
                       <>
-                    <p className="mb-2">Цвет волос: {state.hair}</p>
+					<div className="flex-row">	
+                    	<div className="md:text-right align-top md:pr-20 text-gray-600 mb-2 md:w-6/12 fadein-left">Цвет волос: </div><div className="mr-2 align-top md:pr-4 md:w-6/12 fadein">{state.hair}</div>
+					</div>	
 					  </>
 					)}
  					{!!state.hairlength.length && (
                       <>
-                    <p className="mb-2">Длина волос: {state.hairlength}</p>
+					<div className="flex-row">	
+                    	<div className="md:text-right align-top md:pr-20 text-gray-600 mb-2 md:w-6/12 fadein-left">Длина волос: </div><div className="mr-2 align-top md:pr-4 md:w-6/12 fadein">{state.hairlength}</div>
+					</div>	
 					  </>
 					)}
  					{!!state.colorready.length && (
                       <>
-                    <p className="mb-2">Готов(а) красить волосы: {state.colorready}</p>
+					<div className="flex-row">	
+                    	<div className="md:text-right align-top md:pr-20 text-gray-600 mb-2 md:w-6/12 fadein-left">Готов(а) красить волосы: </div><div className="mr-2 align-top md:pr-4 md:w-6/12 fadein">{state.colorready}</div>
+					</div>	
 					  </>
 					)}
  					{!!state.cutready.length && (
                       <>
-                    <p className="mb-2">Готов(а) стричься налысо: {state.cutready}</p>
+					<div className="flex-row">	
+                    	<div className="md:text-right align-top md:pr-20 text-gray-600 mb-2 md:w-6/12 fadein-left">Готов(а) стричься налысо: </div><div className="mr-2 align-top md:pr-4 md:w-6/12 fadein">{state.cutready}</div>
+					</div>	
 					  </>
 					)}
  					{!!state.type.length && (
                       <>
-                    <p className="mb-2">Тип внешности: {state.type}</p>
+					<div className="flex-row">	
+                    	<div className="md:text-right align-top md:pr-20 text-gray-600 mb-2 md:w-6/12 fadein-left">Тип внешности: </div><div className="mr-2 align-top md:pr-4 md:w-6/12 fadein">{state.type}</div>
+					</div>	
 					  </>
 					)}
  					{!!state.languages.length && (
                       <>
-                    <p className="mb-2">Иностранные языки: {state.languages}</p>
+					<div className="flex-row">	
+                    	<div className="md:text-right align-top md:pr-20 text-gray-600 mb-2 md:w-6/12 fadein-left">Иностранные языки: </div><div className="mr-2 align-top md:pr-4 md:w-6/12 fadein">{state.languages}</div>
+					</div>	
 					  </>
 					)}
  					{!!state.vocal.length && (
                       <>
-                    	<p className="mb-2">Вокал: {state.vocal}</p>
+					<div className="flex-row">	
+                    	<div className="md:text-right align-top md:pr-20 text-gray-600 mb-2 md:w-6/12 fadein-left">Вокал: </div><div className="mr-2 align-top md:pr-4 md:w-6/12 fadein">{state.vocal}</div>
+					</div>	
 					  </>
 					)}
  					{!!state.instruments.length && (
                       <>
-                    <p className="mb-2">Музыкальные инструменты: {state.instruments}</p>
+					<div className="flex-row">	
+                    	<div className="md:text-right align-top md:pr-20 text-gray-600 mb-2 md:w-6/12 fadein-left">Музыкальные инструменты: </div><div className="mr-2 align-top md:pr-4 md:w-6/12 fadein">{state.instruments}</div>
+					</div>	
+	
 					  </>
 					)}
+ 					{state.roles_tv.length>=3 && (
+                      <>
+					<br/>	
+                    <p className="mb-2">Роли в кино и на ТВ: {state.roles_tv.split(/\;/g).map(function(item, idx) {
+											return (
+												<span className="break" key={idx}>
+													{item}
 
+												</span>
+											 )
+										})
+					}
+					 </p><br/>
+					  </>
+					)}
+ 					{state.roles_th.length>=3 && (
+                      <>
+					<br/>	
+                    <p className="mb-2">Роли в театре: {state.roles_th.split(/\;/g).map(function(item, idx) {
+											return (
+												<span className="break" key={idx}>
+													{item}
+
+												</span>
+											 )
+										})
+					}
+					</p>
+					  </>
+					)}
+ 					{state.roles_ad.length>=3 && (
+                      <>
+                    <p className="mb-2">Съёмка в рекламе ТВ, интернет: {state.roles_ad.split(/\;/g).map(function(item, idx) {
+											return (
+												<span className="break" key={idx}>
+													{item}
+
+												</span>
+											 )
+										})
+						}
+					</p>
+					  </>
+					)}
 					<br/>
 
                     <div className="flex items-center"></div>
                   </div>
-                  <div>
+
+                  <div className="videos">
                     {!!extractTube(state.links).length && (
                       <>
                         <p className="mb-2">Видеовизитка</p>
@@ -199,8 +266,8 @@ const Kids = ({ kids }) => {
                       </>
                     )}
                   </div>
-                  <p className="mb-2">Пригласить на пробы</p>
-                  <div className="flex flex-col items-center text-base pb-16">
+                  <p className="mb-2 calltoview">Пригласить на пробы</p>
+                  <div className="flex flex-col calltoview items-center text-base pb-16">
                     <input
                       type="tel"
                       className="w-full rounded-none bg-white border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out px-4 py-2 mb-3"
@@ -290,9 +357,10 @@ const Kids = ({ kids }) => {
 					<select></select>
 				</div>
 			
-			<div className="filterselect" id="resetfilters">Сбросить фильтры</div>
+
 	      </div>
-		</div>
+		<div className="filterselect" id="resetfilters">Сбросить фильтры</div>
+	  </div>
         <div className="agesection">
           {Object.keys(kids).map((gender, i) => (
             <div key={i} data-sex={gender} className="sunday-tab">
@@ -300,10 +368,11 @@ const Kids = ({ kids }) => {
                 <div key={age}>
 
                   {kids[gender][age].map(
-                    ({ name, surname, photo, age, height, links, constitution, eyes, hair, hairlength, colorready, cutready, type, languages, vocal, instruments }, j) => (
-                      <div
+                    ({ name, surname, photo, age, height, links, constitution, eyes, hair, hairlength, colorready, cutready, type, languages, vocal, instruments, roles_tv, roles_th, roles_ad }, j) => (
+                      
+					  <div
                         key={j}
-                        className="inline-block mx-8 mb-8 text-center w-48 align-top cursor-pointer"
+                        className="inline-block mx-8 mb-8 text-center w-72 align-top cursor-pointer"
                         onClick={() =>
                           setState({
                             open: true,
@@ -323,11 +392,14 @@ const Kids = ({ kids }) => {
 							languages, 
 							vocal, 
 							instruments,
+							roles_tv,
+							roles_th,
+							roles_ad,
                           })
                         }
                       >
                         <img
-                          className="object-cover kidcard object-top h-56 w-48"
+                          className="object-cover kidcard object-top h-96 w-72"
                           src={extractPhoto(photo)}
                           alt={`${name.trim()} ${surname.trim()}`}
 						  data-height={`${height}`}
@@ -348,7 +420,7 @@ const Kids = ({ kids }) => {
                         />
 						
                         <p className="text-xl font-fancy font-bold mt-2">
-                          {name.trim()} {surname.trim()}
+                          {name.trim()} <br/> {surname.trim()}
                         </p>
                       </div>
                     )
