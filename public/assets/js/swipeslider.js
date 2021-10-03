@@ -384,17 +384,17 @@
       slider.after('<span class="sw-next-prev sw-prev"></span>');
       slideContainer.find('.sw-prev').click(function(){
         if(allowSlideSwitch){
-          disableAutoPlay();
+          //disableAutoPlay();
           switchBackward();
-          enableAutoPlay();
+          //enableAutoPlay();
         }
       });
       slider.after('<span class="sw-next-prev sw-next"></span>');
       slideContainer.find('.sw-next').click(function(){
         if(allowSlideSwitch) {
-          disableAutoPlay();
+          //disableAutoPlay();
           switchForward();
-          enableAutoPlay();
+          //enableAutoPlay();
         }
         });
     }
