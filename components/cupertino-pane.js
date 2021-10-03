@@ -16,10 +16,13 @@ class _CupertinoPane extends React.Component {
       parentElement: "body",
       breaks: {
         top: { enabled: true, height: 3000, bounce: true },
-        middle: { enabled: true, height: 2000, bounce: true },
-        bottom: { enabled: false, height: 80 },
+        middle: { enabled: false, height: 400, bounce: true },
+        bottom: { enabled: true, height: 100 },
       },
+      initialBreak: 'top',
 	  draggableOver: false,
+	  bottomClose: true,
+	  //fastSwipeClose: true,
       onDidPresent: _ =>
         disableBodyScroll(document.querySelector(".cupertino-pane .container")),
       onWillDismiss: _ => {
