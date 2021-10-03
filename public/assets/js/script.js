@@ -198,10 +198,10 @@ $( document ).ready(function() {
 	})
 
 	
-	$('#boys h1').click(function(){
-	  	$(this).addClass('act');
-		$('#boys h1').not(this).removeClass('act');
-	  })
+//	$('#boys h1').click(function(){
+//	  	$(this).addClass('act');
+//		$('#boys h1').not(this).removeClass('act');
+//	  })
 	
 	var maxh = Math.max.apply(Math,heightarr);
 	var minh = Math.min.apply(Math,heightarr);
@@ -218,24 +218,33 @@ $( document ).ready(function() {
 	$('.agefilt input').change(function(){
 		var minval=parseInt($('#ageinputmin').val());
 		var maxval=parseInt($('#ageinputmax').val());
-		setTimeout(function(){
-        $('.sunday-tab .object-cover').each(function(){
-            if ($(this).attr('data-age')>=minval && $(this).attr('data-age')<=maxval) {
-				if ($(this).parent().hasClass('hiddenh')) {
-						//
-					} else {
-						$(this).parent().removeClass('hiddena');
-					}
-				} else {
+		if ($('#ageinputmin').val()<mina) {
+			$('#ageinputmin').val(mina);
+		} else if ($('#ageinputmax').val()>maxa) {
+			$('#ageinputmax').val(maxa);			
+		} else if ($('#ageinputmin').val()=='') {
+			$('#ageinputmin').val(mina);
+		} else if ($('#ageinputmax').val()=='') { 
+			$('#ageinputmax').val(maxa);	
+		} else {
+			$('.sunday-tab .object-cover').each(function(){
+				if ($(this).attr('data-age')>=minval && $(this).attr('data-age')<=maxval) {
 					if ($(this).parent().hasClass('hiddenh')) {
-						//
+							//
+						} else {
+							$(this).parent().removeClass('hiddena');
+						}
 					} else {
-						$(this).parent().addClass('hiddena');
+						if ($(this).parent().hasClass('hiddenh')) {
+							//
+						} else {
+							$(this).parent().addClass('hiddena');
+						}
 					}
-				}
-        });		
+			});
+        };		
 			
-		},500)
+
 	})
 	$('#heightinputmin').val(minh);
 	$('#heightinputmax').val(maxh);
@@ -256,7 +265,12 @@ $( document ).ready(function() {
 			$('#heightinputmin').val(minh);
 		} else if ($('#heightinputmax').val()>maxh) {
 			$('#heightinputmax').val(maxh);			
+		} else if ($('#heightinputmin').val()=='') {
+			$('#heightinputmin').val(minh);
+		} else if ($('#heightinputmax').val()=='') { 
+			$('#heightinputmax').val(maxh);		
 		} else {
+		
 			$('.sunday-tab .object-cover').each(function(){
 				if ($(this).attr('data-height')>=minval && $(this).attr('data-height')<=maxval) {
 						if ($(this).parent().hasClass('hiddena')) {
@@ -287,17 +301,22 @@ $( document ).ready(function() {
 			//console.log(parray);
 			$.each(parray, function(key, value) {
 				fexedremsp = value.replace(/\s/g,'')
+				fexedremsp = fexedremsp.replace(' ','')
 				fixedsrc = fexedremsp.replace('open','thumbnail')+'&sz=w800';
 				console.log(fixedsrc);
-				
-				$('.cupertino-pane-wrapper.rendered .slideholder .sw-slides').append($("<li class='sw-slide slide-"+key+"'><img class='w-56 h-full mx-auto object-top object-cover max-w-lg' src='"+fixedsrc+"' /></li>")); 
+				$('.cupertino-pane-wrapper.rendered .slideholder .sw-slides').append($("<li class='sw-slide slide-"+key+"'><img class='w-56 h-full mx-auto object-top object-cover max-w-lg' src='"+fixedsrc+"' /><a class='picdown' target='_blank' href='"+fixedsrc+"' download='photo'></a></li>")); 
 
 			});	
 
 		},10)
 		setTimeout(function(){
-			$('.cupertino-pane-wrapper.rendered .slideholder').swipeslider({autoPlay: true, swipe: true, prevNextButtons:false, autoPlayTimeout:5000, sliderHeight: '40rem' });
+			$('.cupertino-pane-wrapper.rendered .slideholder').swipeslider({autoPlay: false, swipe: true, prevNextButtons:true, autoPlayTimeout:5000, sliderHeight: '60%' });
 		},20)
 	})
-
+	$('.kidcard').each(function(){
+		if ($(this).attr('src')=='&sz=w800') {
+			$(this).parent().hide();
+		}
+	})
 })
+
