@@ -137,7 +137,7 @@ $( document ).ready(function() {
 		var constval = $(this).find('option:selected').text();
 		var attname = $(this).parent().attr('id');
 		
-		$('.sunday-tab .object-cover').parent().css('display', 'inline-block');
+		$('.sunday-tab .object-cover').parent().parent().show();
 		if (constval=='-') {
 			var key = attname;
 			delete filterarr[key];
@@ -146,7 +146,7 @@ $( document ).ready(function() {
 					if ($(this).attr('data-'+key)==value) {
 						//
 					} else {
-						$(this).parent().hide();
+						$(this).parent().parent().hide();
 					}
 				});
 			});
@@ -158,7 +158,7 @@ $( document ).ready(function() {
 					if ($(this).attr('data-'+key)==value) {
 						//
 					} else {
-						$(this).parent().hide();
+						$(this).parent().parent().hide();
 					}
 				});
 			});
@@ -206,9 +206,9 @@ $( document ).ready(function() {
 	var maxh = Math.max.apply(Math,heightarr);
 	var minh = Math.min.apply(Math,heightarr);
 	$('#resetfilters').click(function(){
-		$('.sunday-tab .object-cover').parent().css('display', 'inline-block')
-		$('.sunday-tab .object-cover').parent().removeClass('hiddena');
-		$('.sunday-tab .object-cover').parent().removeClass('hiddenh');
+		$('.sunday-tab .object-cover').parent().parent().show();
+		$('.sunday-tab .object-cover').parent().parent().removeClass('hiddena');
+		$('.sunday-tab .object-cover').parent().parent().removeClass('hiddenh');
 		$('.filters select').val(0);
 		$('#ageinputmmin').val(mina)
 		$('#ageinputmax').val(maxa)
@@ -229,16 +229,16 @@ $( document ).ready(function() {
 		} else {
 			$('.sunday-tab .object-cover').each(function(){
 				if ($(this).attr('data-age')>=minval && $(this).attr('data-age')<=maxval) {
-					if ($(this).parent().hasClass('hiddenh')) {
+					if ($(this).parent().parent().hasClass('hiddenh')) {
 							//
 						} else {
-							$(this).parent().removeClass('hiddena');
+							$(this).parent().parent().removeClass('hiddena');
 						}
 					} else {
-						if ($(this).parent().hasClass('hiddenh')) {
+						if ($(this).parent().parent().hasClass('hiddenh')) {
 							//
 						} else {
-							$(this).parent().addClass('hiddena');
+							$(this).parent().parent().addClass('hiddena');
 						}
 					}
 			});
@@ -273,16 +273,16 @@ $( document ).ready(function() {
 		
 			$('.sunday-tab .object-cover').each(function(){
 				if ($(this).attr('data-height')>=minval && $(this).attr('data-height')<=maxval) {
-						if ($(this).parent().hasClass('hiddena')) {
+						if ($(this).parent().parent().hasClass('hiddena')) {
 							//
 						} else {
-							$(this).parent().removeClass('hiddenh');
+							$(this).parent().parent().removeClass('hiddenh');
 						}
 					} else {
-						if ($(this).parent().hasClass('hiddena')) {
+						if ($(this).parent().parent().hasClass('hiddena')) {
 							//
 						} else {
-							$(this).parent().addClass('hiddenh');
+							$(this).parent().parent().addClass('hiddenh');
 						}
 
 					}
@@ -352,6 +352,7 @@ $( document ).ready(function() {
 				$('.selected').show();
 			} else {
 				$('.selected').hide();
+				$('.cuperwidth .destroy-button').trigger('click');
 			}			
 		});
 		
