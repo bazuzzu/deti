@@ -114,34 +114,6 @@ const Kids = ({ kids }) => {
                   </span>
                   <hr className="my-3" />
                   <div className="mt-3">
-                  <div className="videos">
-                    {!!extractTube(state.links).length && (
-                      <>
-                        {/*<button className="text-sm mr-2 mb-3 text-gray-600 border rounded-md py-2 px-4 hover:bg-gray-200 focus:outline-none">
-                      Синий
-                    </button>
-                    <button className="text-sm mr-2 mb-3 text-gray-600 border rounded-md py-2 px-4 hover:bg-gray-200 focus:outline-none">
-                      Красный
-                    </button>*/}
-                        {extractTube(state.links).map((m, i) => (
-                          <iframe
-                            key={i}
-                            src={`https://www.youtube.com/embed/${m.replace(
-                              /https:\/\/youtu.be\/(.*)/,
-                              "$1"
-                            )}`}
-                            title="YouTube video player"
-                            frameBorder="0"
-							width="100%"
-							height="300"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                         
-                          ></iframe>
-                        ))}
-                        <hr className="mb-3" />
-                      </>
-                    )}
-                  </div><br/>
 					  
 					<div className="flex-row">	
                     	<div className="md:text-right align-top md:pr-20 text-gray-600 mb-2 md:w-6/12 fadein-left">Рост: </div><div className="mr-2 align-top md:pr-4 md:w-6/12 fadein">{state.height} см</div>
@@ -167,6 +139,44 @@ const Kids = ({ kids }) => {
 					</div>	
 					  </>
 					)}
+ 					{!!state.type.length && (
+                      <>
+					<div className="flex-row">	
+                    	<div className="md:text-right align-top md:pr-20 text-gray-600 mb-2 md:w-6/12 fadein-left">Тип внешности: </div><div className="mr-2 align-top md:pr-4 md:w-6/12 fadein">{state.type}</div>
+					</div>	
+					  </>
+					)}
+                  <div className="videos">
+                    {!!extractTube(state.links).length && (
+                      <>
+                        {/*<button className="text-sm mr-2 mb-3 text-gray-600 border rounded-md py-2 px-4 hover:bg-gray-200 focus:outline-none">
+                      Синий
+                    </button>
+                    <button className="text-sm mr-2 mb-3 text-gray-600 border rounded-md py-2 px-4 hover:bg-gray-200 focus:outline-none">
+                      Красный
+                    </button>*/}
+                        {extractTube(state.links).map((m, i) => (
+                          <iframe
+                            key={i}
+                            src={`https://www.youtube.com/embed/${m.replace(
+                              /https:\/\/youtu.be\/(.*)/,
+                              "$1"
+                            )}`}
+                            title="YouTube video player"
+                            frameBorder="0"
+							width=""
+							height="auto"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                         
+                          ></iframe>
+                        ))}
+                        <hr className="mb-3" />
+                      </>
+                    )}
+                  </div><br/>
+
+					<div className="addtoggle">Дополнительно</div>
+					<div className="additional">
  					{!!state.hairlength.length && (
                       <>
 					<div className="flex-row">	
@@ -188,13 +198,7 @@ const Kids = ({ kids }) => {
 					</div>	
 					  </>
 					)}
- 					{!!state.type.length && (
-                      <>
-					<div className="flex-row">	
-                    	<div className="md:text-right align-top md:pr-20 text-gray-600 mb-2 md:w-6/12 fadein-left">Тип внешности: </div><div className="mr-2 align-top md:pr-4 md:w-6/12 fadein">{state.type}</div>
-					</div>	
-					  </>
-					)}
+
  					{!!state.languages.length && (
                       <>
 					<div className="flex-row">	
@@ -217,10 +221,19 @@ const Kids = ({ kids }) => {
 	
 					  </>
 					)}
+					</div>
+
+					{(state.roles_tv.length>=3 || state.roles_th.length>=3 || state.roles_ad.length>=3) && (
+                      <>					
+						<div className="exptoggle">Опыт работы</div>
+					  </>
+					)}					
+					
+					<div className="experience">
  					{state.roles_tv.length>=3 && (
                       <>
-					<br/>	
-                    <p className="mb-2">Роли в кино и на ТВ: {state.roles_tv.split(/\;/g).map(function(item, idx) {
+
+                    <p className="mb-2 fadein-right">Кино: {state.roles_tv.split(/\;/g).map(function(item, idx) {
 											return (
 												<span className="break" key={idx}>
 													{item}
@@ -234,8 +247,8 @@ const Kids = ({ kids }) => {
 					)}
  					{state.roles_th.length>=3 && (
                       <>
-					<br/>	
-                    <p className="mb-2">Роли в театре: {state.roles_th.split(/\;/g).map(function(item, idx) {
+	
+                    <p className="mb-2 fadein-right">Театр: {state.roles_th.split(/\;/g).map(function(item, idx) {
 											return (
 												<span className="break" key={idx}>
 													{item}
@@ -244,12 +257,12 @@ const Kids = ({ kids }) => {
 											 )
 										})
 					}
-					</p>
+					</p><br/>
 					  </>
 					)}
  					{state.roles_ad.length>=3 && (
                       <>
-                    <p className="mb-2">Съёмка в рекламе ТВ, интернет: {state.roles_ad.split(/\;/g).map(function(item, idx) {
+                    <p className="mb-2 fadein-right">Реклама: {state.roles_ad.split(/\;/g).map(function(item, idx) {
 											return (
 												<span className="break" key={idx}>
 													{item}
@@ -261,6 +274,7 @@ const Kids = ({ kids }) => {
 					</p>
 					  </>
 					)}
+					</div>
 					<br/>
 
                     <div className="flex items-center"></div>
