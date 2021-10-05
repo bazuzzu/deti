@@ -24,6 +24,7 @@ const Menu = props => (
       <div className="burger-bar bg-black"></div>
       <div className="burger-bar bg-black"></div>
     </label>
+	<div className="selected"></div>
     <div className="menu sm:mx-12 flex text-white">
       <div className="flex flex-col align-center text-center">
         <a href="/">
