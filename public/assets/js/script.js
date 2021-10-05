@@ -353,9 +353,17 @@ $( document ).ready(function() {
 			} else {
 				$('.selected').hide();
 				$('.cuperwidth .destroy-button').trigger('click');
-			}			
+			}
+				
 		});
-		
+			$('.favorities .kidcard').bind('click',function(){
+				var prop = $(this).attr('src');
+				$('.agesection .forcopy .kidcard').each(function(){
+					if ($(this).attr('src')==prop) {
+						$(this).trigger('click');
+					}
+				});
+			})		
 	})
 
 	$('.selected').click(function(){
@@ -377,6 +385,7 @@ $( document ).ready(function() {
 		myPane.present({animate: true})
 	});
 	
+
 	
 })
 
