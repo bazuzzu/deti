@@ -23,6 +23,7 @@ export default class MyDocument extends Document {
 		<script src="/assets/js/jquery-ui.min.js"></script>
 		<script src="/assets/js/jquery.ui.touch-punch.min.js"></script>
 		<script src="/assets/js/swipeslider.js"></script>
+		<script src="https://unpkg.com/cupertino-pane/dist/cupertino-pane.min.js"></script>
 		
         </Head>
         <body className="bg-gray-100 darkmode font-fancy font-light text-black">
