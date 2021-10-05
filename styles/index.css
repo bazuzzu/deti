@@ -489,7 +489,16 @@ footer .vk-link:hover svg path {
 		width: 100% !important;
 		max-width: 100% !important;
 	}
-
+	.cupertino-pane-new {
+		padding: 10px 20px;
+	}
+	.favorities .inline-block {
+		display: block;
+		margin: auto;
+	}
+	.favorities .picholder {
+		margin-bottom: 1rem;
+	}
 }
 .cupertino-pane-wrapper .max-w-lg {
 	font-size: 20px;
@@ -767,6 +776,15 @@ body::-webkit-scrollbar {
 	  border-radius: 20px;       /* roundness of the scroll thumb */
 	  border: 3px solid rgba(62,63,66,1);  /* creates padding around scroll thumb */
 	}
+	.cupertino-pane-new::-webkit-scrollbar-track {
+	  background: rgba(62,63,66,1);        /* color of the tracking area */
+	}
+
+	.cupertino-pane-new::-webkit-scrollbar-thumb {
+	  background-color: #FFF;    /* color of the scroll thumb */
+	  border-radius: 20px;       /* roundness of the scroll thumb */
+	  border: 3px solid rgba(62,63,66,1);  /* creates padding around scroll thumb */
+	}
 	.slideholder {
 		float: left;
 		margin-right: 2em !important;
@@ -803,6 +821,27 @@ body::-webkit-scrollbar {
 		position: relative;
 		top: -10px;
 	}
+	.cupertino-pane-wrapper.cuperwidth .pane {
+		max-width: 100% !important;
+		left: 10px;
+	}
+	.cupertino-pane-new {
+		padding: 10px 20px;
+	}
+	.favorities .calltoview {
+		max-width: 80%;
+		display: block;
+		margin-left: 0;
+
+	}
+	.favorities .calltoview input, .favorities .calltoview button {
+		width: 20%;
+		float: left;
+		margin-right: 2%
+	}
+}
+.cupertino-pane-new {
+	display: none;
 }
 .cupertino-pane-wrapper .destroy-button {
 	right: 30px;
@@ -848,4 +887,62 @@ body::-webkit-scrollbar {
 }
 .cupertino-pane .mb-2 {
 	padding: 0;
+}
+.mark {
+	position: absolute;
+	top: 50%;
+	margin-top: -15px;
+	right: 20px;
+	background: url(/assets/stargray.png) center no-repeat;
+	background-size: cover;
+	width: 30px;
+	height: 30px;
+}
+.mark:hover, .mark.active {
+	background: url(/assets/star.png) center no-repeat;
+	background-size: cover;
+	cursor: pointer;
+}
+.fullname {
+	position: relative;
+}
+.fullname:hover {
+	cursor: default;
+}
+.selected {
+    position: fixed;
+    z-index: 12;
+    right: 0;
+    top: 48px;
+    width: 48px;
+    height: 48px;
+    background: url(/assets/star.png) center no-repeat;
+	background-size: 38px;
+    opacity: 0.6;
+    transition: .15s all;
+	display: none;
+}
+.selected:hover {
+	cursor: pointer;
+	opacity: 1;
+}
+.favorities .mark {
+	height: 30px;
+	width: 30px;
+	background: url(/assets/remove.png) center no-repeat;
+	background-size: contain;
+}
+.favorities .forcopy {
+	position: relative;
+}
+.favorities .fullname {
+    text-transform: uppercase;
+    text-align: left;
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    word-wrap: break-word;
+    padding: 10px 10px 10px 10px;
 }
