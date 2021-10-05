@@ -355,7 +355,7 @@ footer .vk-link:hover svg path {
 	margin-bottom: 50px;
 }
 .hiddenh, .hiddena {
-	display: none;
+	display: none !important;
 }
 #resetfilters {
 	text-decoration: underline;
@@ -505,6 +505,7 @@ footer .vk-link:hover svg path {
 }
 .sunday-tab div.w-72 {
     position: relative;
+	float: left;
 }
 .sunday-tab div.w-72 .text-xl {
     text-transform: uppercase;
