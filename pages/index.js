@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import Image from "next/image"
 import Container from "../components/container"
 import MoreStories from "../components/more-stories"
 import HeroPost from "../components/hero-post"
@@ -16,7 +17,6 @@ import VkIcon from "../components/vk-icon"
 import classnames from "classnames"
 import CupertinoPane from "../components/cupertino-pane"
 import { getKids } from "../lib/api"
-
 
 
 const extractPhoto = s => s.split(", ")[0].replace(/open/, "thumbnail").replace(/\s/g,'')+'&sz=w800'
@@ -58,7 +58,7 @@ const Kids = ({ kids }) => {
   return (
     <Layout>
       <Head>
-        <title>Актерское агенство школы-студии Detikino</title>
+        <title>Актерское агенство школы-студии Dетикино</title>
       </Head>
       <Container
         id="boys"
@@ -93,7 +93,7 @@ const Kids = ({ kids }) => {
                   </a>
 			</div>
 		</div>	
-        <h2 className="text-3xl font-fancy pt-3 pr-12">Актерское агенство<br/> школы-студии<br/> Detikino</h2>
+        <h2 className="text-3xl font-fancy pt-3 pr-12">Актерское агенство<br/> школы-студии<br/> Dетикино</h2>
 		<div className="clear"></div>
         {state.open && (
           <CupertinoPane onCloseClick={_ => setState({ open: false })}>
@@ -271,17 +271,17 @@ const Kids = ({ kids }) => {
                     <input
                       type="tel"
                       className="w-full rounded-none bg-white border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out px-4 py-2 mb-3"
-                      placeholder="Ваше имя"
-                      onChange={e => setState({ yourName: e.target.value })}
-                      value={state.yourName || ""}
+                      placeholder="Ваше имя" name="name"
+                      onChange={(e)=>{setName(e.target.value)}}
+                      
                     />
 
                     <input
                       type="tel"
                       className="w-full rounded-none bg-white border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out px-4 py-2 mb-3"
-                      placeholder="Ваш номер телефона"
-                      onChange={e => setState({ tel: e.target.value })}
-                      value={state.tel || ""}
+                      placeholder="Ваш номер телефона" name="phone"
+                      onChange={(e)=>{setPhone(e.target.value)}}
+                     
                     />
                     <button className="flex items-center justify-center hover:bg-white hover:bg-opacity-25 hover:text-black bg-black text-white border border-black font-bold py-3 px-4 duration-150 transition-colors mb-0 w-full">
                       <RiAddLine className="mr-1" /> Пригласить
@@ -373,7 +373,9 @@ const Kids = ({ kids }) => {
 					  <div
                         key={j}
                         className="inline-block mx-8 mb-8 text-center w-72 align-top cursor-pointer"
-                        onClick={() =>
+
+                      ><div className="forcopy">
+                        <img onClick={() =>
                           setState({
                             open: true,
                             name,
@@ -397,8 +399,6 @@ const Kids = ({ kids }) => {
 							roles_ad,
                           })
                         }
-                      >
-                        <img
                           className="object-cover kidcard object-top h-96 w-72"
                           src={extractPhoto(photo)}
                           alt={`${name.trim()} ${surname.trim()}`}
@@ -419,9 +419,12 @@ const Kids = ({ kids }) => {
                           referrerPolicy="no-referrer"
                         />
 						
-                        <p className="text-xl font-fancy font-bold mt-2">
+						
+                        <div className="fullname text-xl font-fancy font-bold mt-2">
                           {name.trim()} <br/> {surname.trim()}
-                        </p>
+						<div className="mark" ></div>
+                        </div>
+						</div>
                       </div>
                     )
                   )}
@@ -430,6 +433,30 @@ const Kids = ({ kids }) => {
             </div>
           ))}
         </div>
+		<div className="cupertino-pane-new favorities">
+				<div className="picholder"></div>
+                  <p className="mb-2 calltoview">Пригласить на пробы</p>
+                  <div className="flex flex-col calltoview text-base pb-16">
+                    <input
+                      type="tel"
+                      className="w-full rounded-none bg-white border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out px-4 py-2 mb-3"
+                      placeholder="Ваше имя"
+                      onChange={e => setState({ yourName: e.target.value })}
+                      value={state.yourName || ""}
+                    />
+
+                    <input
+                      type="tel"
+                      className="w-full rounded-none bg-white border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out px-4 py-2 mb-3"
+                      placeholder="Ваш номер телефона"
+                      onChange={e => setState({ tel: e.target.value })}
+                      value={state.tel || ""}
+                    />
+                    <button className="flex items-center justify-center hover:bg-white hover:bg-opacity-25 hover:text-black bg-black text-white border border-black font-bold py-3 px-4 duration-150 transition-colors mb-0 w-full px-4 py-2 mb-3">
+                      <RiAddLine className="mr-1" /> Пригласить
+                    </button>
+			</div>
+		</div>
       </Container>
     </Layout>
   )
