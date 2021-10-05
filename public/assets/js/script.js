@@ -339,16 +339,22 @@ $( document ).ready(function() {
 		} else {
 			$('.selected').hide();
 		}
-	$('.favorities .mark').bind('click',function(e){
-		e.preventDefault();
-		var prop = $(this).parent().parent().parent().find('.kidcard').attr('src');
-		$('.forcopy img').each(function(){
-				if ($(this).attr('src')==prop) {
-					$(this).parent().find('.mark').removeClass('active');
-				}
-			})
-		$(this).parent().parent().parent().remove();
-	});
+		$('.favorities .mark').bind('click',function(e){
+			e.preventDefault();
+			var prop = $(this).parent().parent().parent().find('.kidcard').attr('src');
+			$('.forcopy img').each(function(){
+					if ($(this).attr('src')==prop) {
+						$(this).parent().find('.mark').removeClass('active');
+					}
+				})
+			$(this).parent().parent().parent().remove();
+			if ($('.agesection .mark.active').length>0) {
+				$('.selected').show();
+			} else {
+				$('.selected').hide();
+			}			
+		});
+		
 	})
 
 	$('.selected').click(function(){
