@@ -35,7 +35,7 @@ class _CupertinoPane extends React.Component {
     }
     if (this.ref) {
       let myPane = new CupertinoPane(this.ref.current, settings)
-	  console.log(this.ref.current)
+
       myPane.present({ animate: true })
       this.pane = myPane
     }
