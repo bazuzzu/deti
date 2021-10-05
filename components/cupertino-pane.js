@@ -22,19 +22,20 @@ class _CupertinoPane extends React.Component {
       initialBreak: 'top',
 	  draggableOver: false,
 	  bottomClose: true,
-	  //fastSwipeClose: true,
+	  fastSwipeClose: true,
       onDidPresent: _ =>
         disableBodyScroll(document.querySelector(".cupertino-pane .container")),
       onWillDismiss: _ => {
         this.props.onCloseClick && this.props.onCloseClick()
         clearAllBodyScrollLocks()
-        enableBodyScroll(this.ref.current)
+        //enableBodyScroll(this.ref.current)
         false
       },
       ...this.props.settings,
     }
     if (this.ref) {
       let myPane = new CupertinoPane(this.ref.current, settings)
+	  console.log(this.ref.current)
       myPane.present({ animate: true })
       this.pane = myPane
     }
