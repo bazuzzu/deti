@@ -58,7 +58,7 @@ const Kids = ({ kids }) => {
   return (
     <Layout>
       <Head>
-        <title>Актерское агенство школы-студии DЕТИКИНО</title>
+        <title>Актерское агенство школы-студии Dетикино</title>
       </Head>
       <Container
         id="boys"
@@ -93,7 +93,7 @@ const Kids = ({ kids }) => {
                   </a>
 			</div>
 		</div>	
-        <h2 className="text-3xl font-fancy pt-3 pr-12">Актерское агенство<br/> школы-студии<br/> DЕТИКИНО</h2>
+        <h2 className="text-3xl font-fancy pt-3 pr-12">Актерское агенство<br/> школы-студии<br/> Dетикино</h2>
 		<div className="clear"></div>
         {state.open && (
           <CupertinoPane onCloseClick={_ => setState({ open: false })}>
@@ -114,6 +114,35 @@ const Kids = ({ kids }) => {
                   </span>
                   <hr className="my-3" />
                   <div className="mt-3">
+                  <div className="videos">
+                    {!!extractTube(state.links).length && (
+                      <>
+                        {/*<button className="text-sm mr-2 mb-3 text-gray-600 border rounded-md py-2 px-4 hover:bg-gray-200 focus:outline-none">
+                      Синий
+                    </button>
+                    <button className="text-sm mr-2 mb-3 text-gray-600 border rounded-md py-2 px-4 hover:bg-gray-200 focus:outline-none">
+                      Красный
+                    </button>*/}
+                        {extractTube(state.links).map((m, i) => (
+                          <iframe
+                            key={i}
+                            src={`https://www.youtube.com/embed/${m.replace(
+                              /https:\/\/youtu.be\/(.*)/,
+                              "$1"
+                            )}`}
+                            title="YouTube video player"
+                            frameBorder="0"
+							width="100%"
+							height="300"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                         
+                          ></iframe>
+                        ))}
+                        <hr className="mb-3" />
+                      </>
+                    )}
+                  </div><br/>
+					  
 					<div className="flex-row">	
                     	<div className="md:text-right align-top md:pr-20 text-gray-600 mb-2 md:w-6/12 fadein-left">Рост: </div><div className="mr-2 align-top md:pr-4 md:w-6/12 fadein">{state.height} см</div>
 					</div>	
@@ -237,35 +266,6 @@ const Kids = ({ kids }) => {
                     <div className="flex items-center"></div>
                   </div>
 
-                  <div className="videos">
-                    {!!extractTube(state.links).length && (
-                      <>
-                        <p className="mb-2">Видеовизитка</p>
-                        {/*<button className="text-sm mr-2 mb-3 text-gray-600 border rounded-md py-2 px-4 hover:bg-gray-200 focus:outline-none">
-                      Синий
-                    </button>
-                    <button className="text-sm mr-2 mb-3 text-gray-600 border rounded-md py-2 px-4 hover:bg-gray-200 focus:outline-none">
-                      Красный
-                    </button>*/}
-                        {extractTube(state.links).map((m, i) => (
-                          <iframe
-                            key={i}
-                            src={`https://www.youtube.com/embed/${m.replace(
-                              /https:\/\/youtu.be\/(.*)/,
-                              "$1"
-                            )}`}
-                            title="YouTube video player"
-                            frameBorder="0"
-							width="100%"
-							height="300"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                         
-                          ></iframe>
-                        ))}
-                        <hr className="mb-3" />
-                      </>
-                    )}
-                  </div>
                   <p className="mb-2 calltoview">Пригласить на пробы</p>
                   <div className="flex flex-col calltoview items-center text-base pb-16">
                     <input
@@ -319,12 +319,16 @@ const Kids = ({ kids }) => {
 			<a className="add_filter_but" href="#">Дополнительно</a>
 			<a className="add_filter_but_act" href="#">Дополнительно</a>			
 			<div className="agefilt filtr">
-			<div>Возраст</div><br/>
-			от <input id="ageinputmin" type="text" /> до <input id="ageinputmax" type="text" />
+				<div>Возраст</div><br/>
+				от <input id="ageinputmin" type="text" /> до <input id="ageinputmax" type="text" />
 			</div>
 			<div className="heightfilt filtr">
-			<div>Рост</div><br/>
-			от <input id="heightinputmin" type="text" /> до <input id="heightinputmax" type="text" />
+				<div>Рост</div><br/>
+				от <input id="heightinputmin" type="text" /> до <input id="heightinputmax" type="text" />
+			</div>
+			<div className="searchinput filtr">
+				<div>Поиск</div><br/>
+				<input id="searchform" type="text" />
 			</div>
 
 			<div className="add_filters">
