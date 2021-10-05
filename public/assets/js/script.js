@@ -314,7 +314,7 @@ $( document ).ready(function() {
 	})
 	$('.kidcard').each(function(){
 		if ($(this).attr('src')=='&sz=w800') {
-			$(this).parent().hide();
+			$(this).parent().parent().hide();
 		}
 	})
 	
