@@ -293,17 +293,16 @@ $( document ).ready(function() {
 			
 	})
 	
-	$('.kidcard').click(function(){
+	$('.kidcard').click(function(e){
+		e.preventDefault();
 		setTimeout(function(){
 			var parray= new Array();
 			var parrraw = $('.cupertino-pane-wrapper.rendered').find('.photo_arr').text()
 			parray = parrraw.split(",");
-			//console.log(parray);
 			$.each(parray, function(key, value) {
-				fexedremsp = value.replace(/\s/g,'')
-				fexedremsp = fexedremsp.replace(' ','')
-				fixedsrc = fexedremsp.replace('open','thumbnail')+'&sz=w800';
-				console.log(fixedsrc);
+				var fexedremsp = value.replace(/\s/g,'')
+				    fexedremsp = fexedremsp.replace(' ','')
+				var fixedsrc = fexedremsp.replace('open','thumbnail')+'&sz=w800';
 				$('.cupertino-pane-wrapper.rendered .slideholder .sw-slides').append($("<li class='sw-slide slide-"+key+"'><img class='w-56 h-full mx-auto object-top object-cover max-w-lg' src='"+fixedsrc+"' /><a class='picdown' target='_blank' href='"+fixedsrc+"' download='photo'></a></li>")); 
 
 			});	
@@ -318,5 +317,60 @@ $( document ).ready(function() {
 			$(this).parent().hide();
 		}
 	})
+	
+	$('.mark').click(function(e){
+		e.preventDefault();
+		if ($(this).hasClass('active')) {
+			$(this).removeClass('active');
+			var prop = $(this).parent().parent().find('.kidcard').attr('src');
+			$('.favorities .forcopy img').each(function(){
+				if ($(this).attr('src')==prop) {
+					$(this).parent().parent().remove();
+				}
+			})
+		} else {
+			$(this).addClass('active');			
+			var cloned = $(this).parent().parent().parent().clone();
+			$('.cupertino-pane-new .picholder').append(cloned);
+		}
+		
+		if ($('.agesection .mark.active').length>0) {
+			$('.selected').show();
+		} else {
+			$('.selected').hide();
+		}
+	$('.favorities .mark').bind('click',function(e){
+		e.preventDefault();
+		var prop = $(this).parent().parent().parent().find('.kidcard').attr('src');
+		$('.forcopy img').each(function(){
+				if ($(this).attr('src')==prop) {
+					$(this).parent().find('.mark').removeClass('active');
+				}
+			})
+		$(this).parent().parent().parent().remove();
+	});
+	})
+
+	$('.selected').click(function(){
+		var myPane = new CupertinoPane('.cupertino-pane-new',{
+			parentElement: "body",
+			breaks: {
+					top: {
+					enabled: true, // Enable or disable breakpoint
+					height: 550, // Pane breakpoint height
+					bounce: true // Bounce pane on transition
+				}			
+			},
+			initialBreak: 'top',
+			bottomClose: true,
+			fastSwipeClose: true,
+			cssClass: 'cuperwidth'
+
+		});
+		myPane.present({animate: true})
+	});
+	
+	
 })
+
 
