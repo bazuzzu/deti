@@ -210,7 +210,7 @@ $( document ).ready(function() {
 		$('.sunday-tab .object-cover').parent().parent().removeClass('hiddena');
 		$('.sunday-tab .object-cover').parent().parent().removeClass('hiddenh');
 		$('.filters select').val(0);
-		$('#ageinputmmin').val(mina)
+		$('#ageinputmin').val(mina)
 		$('#ageinputmax').val(maxa)
 		$('#heightinputmin').val(minh)
 		$('#heightinputmax').val(maxh)
@@ -385,7 +385,26 @@ $( document ).ready(function() {
 		myPane.present({animate: true})
 	});
 	
+	$('body').on('click','.exptoggle',function(){
 
+		if ($(this).hasClass('act')) {
+			$(this).removeClass('act');
+			$('.experience').hide();
+		} else {
+			$(this).addClass('act');
+			$('.experience').show();
+		}
+	})
+	$('body').on('click','.addtoggle',function(){
+
+		if ($(this).hasClass('act')) {
+			$(this).removeClass('act');
+			$('.additional').hide();
+		} else {
+			$(this).addClass('act');
+			$('.additional').show();
+		}
+	})
 	
 })
 
