@@ -210,10 +210,11 @@ $( document ).ready(function() {
 		$('.sunday-tab .object-cover').parent().parent().removeClass('hiddena');
 		$('.sunday-tab .object-cover').parent().parent().removeClass('hiddenh');
 		$('.filters select').val(0);
-		$('#ageinputmin').val(mina)
-		$('#ageinputmax').val(maxa)
-		$('#heightinputmin').val(minh)
-		$('#heightinputmax').val(maxh)
+		$('#ageinputmin').val(mina);
+		$('#ageinputmax').val(maxa);
+		$('#heightinputmin').val(minh);
+		$('#heightinputmax').val(maxh);
+		$('#searchform').val('');
 	});	
 	$('.agefilt input').change(function(){
 		var minval=parseInt($('#ageinputmin').val());
@@ -293,7 +294,7 @@ $( document ).ready(function() {
 			
 	})
 	
-	$('.kidcard').click(function(e){
+	$('.agesection .kidcard').click(function(e){
 		e.preventDefault();
 		setTimeout(function(){
 			var parray= new Array();
@@ -317,7 +318,19 @@ $( document ).ready(function() {
 			$(this).parent().parent().hide();
 		}
 	})
-	
+	const mouseClickEvents = ['click'];	
+	function simulateMouseClick(element){
+	  mouseClickEvents.forEach(mouseEventType =>
+		element.dispatchEvent(
+		  new MouseEvent(mouseEventType, {
+			  view: window,
+			  bubbles: true,
+			  cancelable: true,
+			  buttons: 1
+		  })
+		)
+	  );
+	}	
 	$('.mark').click(function(e){
 		e.preventDefault();
 		if ($(this).hasClass('active')) {
@@ -356,15 +369,13 @@ $( document ).ready(function() {
 			}
 				
 		});
-			$('.favorities .kidcard').bind('click',function(){
-				var prop = $(this).attr('src');
-				$('.agesection .forcopy .kidcard').each(function(){
-					if ($(this).attr('src')==prop) {
-						$(this).trigger('click');
-					}
-				});
-			})		
+		
 	})
+    $('body').on('click','.favorities .kidcard',function(){
+        var prop = $(this).attr('src');
+        var element = document.querySelector('.agesection .kidcard[src="'+prop+'"]');
+        simulateMouseClick(element);
+    })		
 
 	$('.selected').click(function(){
 		var myPane = new CupertinoPane('.cupertino-pane-new',{
@@ -404,6 +415,17 @@ $( document ).ready(function() {
 			$(this).addClass('act');
 			$('.additional').show();
 		}
+	})
+	$('#searchform').keyup(function(){
+		var fval = $(this).val();
+		$('.agesection .fullname').each(function(){
+			var fname = $(this).text();
+			if (fname.toLowerCase().indexOf(fval) >= 0) {
+				$(this).parent().parent().show()
+			} else {
+				$(this).parent().parent().hide();
+			}
+		})
 	})
 	
 })
