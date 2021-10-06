@@ -29,7 +29,7 @@ class _CupertinoPane extends React.Component {
           clearAllBodyScrollLocks()
       //  //enableBodyScroll(this.ref.current)
           false
-      //},
+      },
       ...this.props.settings,
     }
     if (this.ref) {
