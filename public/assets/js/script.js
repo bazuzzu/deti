@@ -416,11 +416,11 @@ $( document ).ready(function() {
 			$('.additional').show();
 		}
 	})
-	$('#searchform').change(function(){
+	$('#searchform').keyup(function(){
 		var fval = $(this).val();
 		$('.agesection .fullname').each(function(){
 			var fname = $(this).text();
-			if (fname.toLowerCase().indexOf(fval) >= 0) {
+			if (fname.toLowerCase().indexOf(fval.toLowerCase()) >= 0) {
 				$(this).parent().parent().show()
 			} else {
 				$(this).parent().parent().hide();
