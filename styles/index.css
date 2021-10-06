@@ -715,7 +715,7 @@ select {
 	color:#FFF !important;
 }
 .darkmode.bg-gray-100  {
-	background-color: rgba(62,63,66,1) !important;
+	background-color: #171F22 !important;
 }
 #boys:not(:target) .sunday-wrapper>a:first-child h1 {
 	color: #FFF!important;
@@ -740,7 +740,7 @@ select {
 	color: #FFF!important;	
 }
 .cupertino-pane-wrapper .pane {
-	background-color: #282828;;
+	background-color: #364147;;
 	max-width: 70%;
 }
 .cupertino-pane-wrapper button {
@@ -771,7 +771,9 @@ body::-webkit-scrollbar {
 	.cupertino-pane::-webkit-scrollbar-track {
 	  background: rgba(62,63,66,1);        /* color of the tracking area */
 	}
-
+	.cupertino-pane-new::-webkit-scrollbar {
+		width: 10px;
+	}
 	.cupertino-pane::-webkit-scrollbar-thumb {
 	  background-color: #FFF;    /* color of the scroll thumb */
 	  border-radius: 20px;       /* roundness of the scroll thumb */
@@ -948,7 +950,9 @@ body::-webkit-scrollbar {
     padding: 10px 10px 10px 10px;
 }
 #searchform {
-	display: none;
+	padding: 5px;
+	border-radius: 3px;
+	width: 260px;
 }
 .exptoggle {
 	text-decoration: underline;
@@ -975,4 +979,7 @@ body::-webkit-scrollbar {
 .videos iframe {
 	width: 100%;
 	height: 400px;
+}
+.favorities .mx-8 {
+	margin-bottom: 0;
 }
