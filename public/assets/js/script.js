@@ -416,7 +416,7 @@ $( document ).ready(function() {
 			$('.additional').show();
 		}
 	})
-	$('#searchform').keyup(function(){
+	$('#searchform').change(function(){
 		var fval = $(this).val();
 		$('.agesection .fullname').each(function(){
 			var fname = $(this).text();
