@@ -18,19 +18,18 @@ class _CupertinoPane extends React.Component {
         top: { enabled: true, height: 3000, bounce: true },
       },
       initialBreak: 'top',
-	  draggableOver: true,
 	  bottomClose: true,
 	  fastSwipeClose: true,
 	  simulateTouch: false,
 	  topperOverflow: true,	
-      onDidPresent: _ =>
-        disableBodyScroll(document.querySelector(".cupertino-pane .container")),
-      onWillDismiss: _ => {
-        this.props.onCloseClick && this.props.onCloseClick()
-        clearAllBodyScrollLocks()
-        //enableBodyScroll(this.ref.current)
-        false
-      },
+      //onDidPresent: _ =>
+      //  disableBodyScroll(document.querySelector(".cupertino-pane .container")),
+      //onWillDismiss: _ => {
+      //  this.props.onCloseClick && this.props.onCloseClick()
+      //  clearAllBodyScrollLocks()
+      //  //enableBodyScroll(this.ref.current)
+      //  false
+      //},
       ...this.props.settings,
     }
     if (this.ref) {
