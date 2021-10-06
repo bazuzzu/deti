@@ -342,7 +342,7 @@ const Kids = ({ kids }) => {
 			</div>
 			<div className="searchinput filtr">
 				<div>Поиск</div><br/>
-				<input id="searchform" type="text" />
+				<input id="searchform" placeholder="Начните вводить имя или фамилию" type="text" />
 			</div>
 
 			<div className="add_filters">
