@@ -15,7 +15,7 @@ class _CupertinoPane extends React.Component {
     let settings = {
       parentElement: "body",
       breaks: {
-        top: { enabled: true, height: 550, bounce: true },
+        top: { enabled: true, height: 3000, bounce: true },
       },
       initialBreak: 'top',
 	  draggableOver: true,
