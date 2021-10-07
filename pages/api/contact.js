@@ -6,13 +6,13 @@ export default function (req, res) {
     port: 465,
     host: "smtp.gmail.com",
     auth: {
-      user: 'cast.request.detikino@gmail.com',
+      user: 'detikino.request@gmail.com',
       pass: process.env.password,
     },
     secure: true,
   })
   const mailData = {
-    from: 'cast.request.detikino@gmail.com',
+    from: 'detikino.request@gmail.com',
     to: 'stas.green@gmail.com',
     subject: `Заявка на кастинг`,
     text: req.body.phone + " | " + req.body.name + " | " + req.body.message + "",
