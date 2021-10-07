@@ -7,7 +7,7 @@ export default function (req, res) {
     host: "smtp.gmail.com",
     auth: {
       user: 'detikino.request@gmail.com',
-      pass: detikino.request2021,
+      pass: 'detikino.request2021',
     },
     secure: true,
   })
