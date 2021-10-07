@@ -175,7 +175,7 @@
   box-shadow: 2.5px 0px 15px rgba(0, 0, 0, .5);
   padding-right: .5rem;
   padding-left: .5rem;
-  background-color: #282828;
+  background-color: #364147;
 }
 
 @media (min-width: 640px) {
@@ -498,6 +498,15 @@ footer .vk-link:hover svg path {
 	}
 	.favorities .picholder {
 		margin-bottom: 1rem;
+	}
+	.searchinput {
+		margin-top: 1rem;
+	}
+	.searchinput.filtr {
+		width: 100% !important;
+	}
+	#searchform {
+		width: 100% !important;
 	}
 }
 .cupertino-pane-wrapper .max-w-lg {
@@ -982,4 +991,21 @@ body::-webkit-scrollbar {
 }
 .favorities .mx-8 {
 	margin-bottom: 0;
+}
+.storenames {
+	display: none;
+}
+.sending {
+	background: #171F22;
+	display: none;
+	width: 300px;
+	height: 80px;
+	z-index: 50;
+	position: fixed;
+	top: 50%;
+	margin-top: -40px;
+	left: 50%;
+	margin-left: -150px;
+	text-align: center;
+	line-height: 80px;
 }

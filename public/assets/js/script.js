@@ -293,9 +293,22 @@ $( document ).ready(function() {
 
 			
 	})
-	
 	$('.agesection .kidcard').click(function(e){
+		
+		var kidname = $(this).parent().find('.fullname').text();
+		
+		window.triggerChange = function triggerChange(nextValue) {
+		  const element = document.querySelector('.cupertino-pane-wrapper.rendered .storenames')
+		  const event = new Event('input', { bubbles: true })
+		  const previousValue = element.value
+
+		  element.value = kidname
+		  element._valueTracker.setValue(' ')
+		  element.dispatchEvent(event)
+		}
+
 		e.preventDefault();
+
 		setTimeout(function(){
 			var parray= new Array();
 			var parrraw = $('.cupertino-pane-wrapper.rendered').find('.photo_arr').text()
@@ -306,7 +319,9 @@ $( document ).ready(function() {
 				var fixedsrc = fexedremsp.replace('open','thumbnail')+'&sz=w800';
 				$('.cupertino-pane-wrapper.rendered .slideholder .sw-slides').append($("<li class='sw-slide slide-"+key+"'><img class='w-56 h-full mx-auto object-top object-cover max-w-lg' src='"+fixedsrc+"' /><a class='picdown' target='_blank' href='"+fixedsrc+"' download='photo'></a></li>")); 
 
-			});	
+			});
+			$('.cupertino-pane-wrapper.rendered .storenames').val(kidname);
+			triggerChange();
 
 		},10)
 		setTimeout(function(){
@@ -330,10 +345,28 @@ $( document ).ready(function() {
 		  })
 		)
 	  );
-	}	
+	}
+	var allkids ='';
+	
 	$('.mark').click(function(e){
 		e.preventDefault();
+		var kidname = $(this).parent().text();
+		
+		window.triggerChange = function triggerChange(nextValue) {
+		  const element = document.querySelector('.favorities .storenames')
+		  const event = new Event('input', { bubbles: true })
+		  const previousValue = element.value
+
+		  element.value = allkids
+		  element._valueTracker.setValue(' ')
+		  element.dispatchEvent(event)
+		}		 
 		if ($(this).hasClass('active')) {
+			allkids = allkids.replace(kidname + '<br/>','');
+			allkids = allkids.replace(kidname,'');
+			console.log(allkids);
+			$('.favorities .storenames').val(allkids);
+			triggerChange();
 			$(this).removeClass('active');
 			var prop = $(this).parent().parent().find('.kidcard').attr('src');
 			$('.favorities .forcopy img').each(function(){
@@ -342,6 +375,10 @@ $( document ).ready(function() {
 				}
 			})
 		} else {
+			allkids = allkids + kidname+ '<br/>';
+			console.log(allkids);
+			$('.favorities .storenames').val(allkids);
+			triggerChange();
 			$(this).addClass('active');			
 			var cloned = $(this).parent().parent().parent().clone();
 			$('.cupertino-pane-new .picholder').append(cloned);
@@ -390,6 +427,7 @@ $( document ).ready(function() {
 			initialBreak: 'top',
 			bottomClose: true,
 			fastSwipeClose: true,
+			simulateTouch: false,
 			cssClass: 'cuperwidth'
 
 		});
@@ -416,11 +454,11 @@ $( document ).ready(function() {
 			$('.additional').show();
 		}
 	})
-	$('#searchform').keyup(function(){
+	$('#searchform').change(function(){
 		var fval = $(this).val();
 		$('.agesection .fullname').each(function(){
 			var fname = $(this).text();
-			if (fname.toLowerCase().indexOf(fval.toLowerCase()) >= 0) {
+			if (fname.toLowerCase().indexOf(fval) >= 0) {
 				$(this).parent().parent().show()
 			} else {
 				$(this).parent().parent().hide();

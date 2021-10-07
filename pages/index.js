@@ -52,9 +52,54 @@ const Link = ({ children, className, ...rest }) => (
   </a>
 )
 
+
+
+
+
 const Kids = ({ kids }) => {
   const [state, _setState] = useState({})
   const setState = s => _setState(prev => ({ ...prev, ...s }))
+  
+// mail
+  
+	const [name, setName] = useState('')
+	const [phone, setPhone] = useState('')
+	const [message, setMessage] = useState('')
+	const [submitted, setSubmitted] = useState(false)	
+
+	const handleSubmit = (e) => { 
+	  e.preventDefault()
+	  $('.sending').show();
+	  setTimeout(function(){
+		  $('.sending').fadeOut('slow');
+	  }, 3000)		
+	  console.log('Sending')
+	let data = {
+		name,
+		phone,
+		message
+	  }
+	fetch('/api/contact', {
+		method: 'POST',
+		headers: {
+		  'Accept': 'application/json, text/plain, */*',
+		  'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(data)
+	  }).then((res) => {
+		console.log('Response received')
+		if (res.status === 200) {
+		  console.log('Response succeeded!')
+		  setSubmitted(true)
+		  setName('')
+		  setPhone('')
+		  setBody('')
+		}
+	  })
+	}
+  
+// endmail  
+  
   return (
     <Layout>
       <Head>
@@ -283,7 +328,7 @@ const Kids = ({ kids }) => {
                   <p className="mb-2 calltoview">Пригласить на пробы</p>
                   <div className="flex flex-col calltoview items-center text-base pb-16">
                     <input
-                      type="tel"
+                      type="text"
                       className="w-full rounded-none bg-white border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out px-4 py-2 mb-3"
                       placeholder="Ваше имя" name="name"
                       onChange={(e)=>{setName(e.target.value)}}
@@ -291,13 +336,19 @@ const Kids = ({ kids }) => {
                     />
 
                     <input
-                      type="tel"
+                      type="text"
                       className="w-full rounded-none bg-white border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out px-4 py-2 mb-3"
                       placeholder="Ваш номер телефона" name="phone"
                       onChange={(e)=>{setPhone(e.target.value)}}
                      
                     />
-                    <button className="flex items-center justify-center hover:bg-white hover:bg-opacity-25 hover:text-black bg-black text-white border border-black font-bold py-3 px-4 duration-150 transition-colors mb-0 w-full">
+                    <input className='storenames'
+                      type="text"
+                      name="message"
+                      onChange={(e)=>{setMessage(e.target.value)}}
+                     
+                    />
+                    <button type="submit" onClick={(e)=>{handleSubmit(e)}} className="flex items-center justify-center hover:bg-white hover:bg-opacity-25 hover:text-black bg-black text-white border border-black font-bold py-3 px-4 duration-150 transition-colors mb-0 w-full">
                       <RiAddLine className="mr-1" /> Пригласить
                     </button>
                   </div>
@@ -439,7 +490,7 @@ const Kids = ({ kids }) => {
 						
 						
                         <div className="fullname text-xl font-fancy font-bold mt-2">
-                          {name.trim()} <br/> {surname.trim()}
+                          {name.trim()} <br/>{surname.trim()}
 						<div className="mark" ></div>
                         </div>
 						</div>
@@ -456,25 +507,32 @@ const Kids = ({ kids }) => {
                   <p className="mb-2 calltoview">Пригласить на пробы</p>
                   <div className="flex flex-col calltoview text-base pb-16">
                     <input
-                      type="tel"
+                      type="text"
                       className="w-full rounded-none bg-white border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out px-4 py-2 mb-3"
-                      placeholder="Ваше имя"
-                      onChange={e => setState({ yourName: e.target.value })}
-                      value={state.yourName || ""}
+                      placeholder="Ваше имя" name="name"
+                      onChange={(e)=>{setName(e.target.value)}}
+                      
                     />
 
                     <input
-                      type="tel"
+                      type="text"
                       className="w-full rounded-none bg-white border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out px-4 py-2 mb-3"
-                      placeholder="Ваш номер телефона"
-                      onChange={e => setState({ tel: e.target.value })}
-                      value={state.tel || ""}
+                      placeholder="Ваш номер телефона" name="phone"
+                      onChange={(e)=>{setPhone(e.target.value)}}
+                     
                     />
-                    <button className="flex items-center justify-center hover:bg-white hover:bg-opacity-25 hover:text-black bg-black text-white border border-black font-bold py-3 px-4 duration-150 transition-colors mb-0 w-full px-4 py-2 mb-3">
+                    <input className='storenames'
+                      type="text"
+                      name="message"
+                      onChange={(e)=>{setMessage(e.target.value)}}
+                     
+                    />
+                    <button type="submit" onClick={(e)=>{handleSubmit(e)}} className="flex items-center justify-center hover:bg-white hover:bg-opacity-25 hover:text-black bg-black text-white border border-black font-bold py-3 px-4 duration-150 transition-colors mb-0 w-full">
                       <RiAddLine className="mr-1" /> Пригласить
                     </button>
 			</div>
 		</div>
+		<div className="sending">Ваша заявка отправлена. Спасибо!</div>
       </Container>
     </Layout>
   )
@@ -494,4 +552,6 @@ export async function getStaticProps(context) {
   }
 }
 
-export default Kids
+export default Kids 
+
+
