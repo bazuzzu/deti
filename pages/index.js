@@ -69,10 +69,7 @@ const Kids = ({ kids }) => {
 
 	const handleSubmit = (e) => { 
 	  e.preventDefault()
-	  $('.sending').show();
-	  setTimeout(function(){
-		  $('.sending').fadeOut('slow');
-	  }, 3000)		
+	
 	  console.log('Sending')
 	let data = {
 		name,
@@ -87,6 +84,10 @@ const Kids = ({ kids }) => {
 		},
 		body: JSON.stringify(data)
 	  }).then((res) => {
+		$('.sending').show();
+		setTimeout(function(){
+		  $('.sending').fadeOut('slow');
+	        }, 3000)			
 		console.log('Response received')
 		if (res.status === 200) {
 		  console.log('Response succeeded!')
