@@ -13,7 +13,7 @@ export default function (req, res) {
   })
   const mailData = {
     from: 'detikino.request@gmail.com',
-    to: 'stas.green@gmail.com',
+    to: 'casting@detikino.ru',
     subject: `Заявка на кастинг`,
     text: req.body.phone + " | " + req.body.name + " | " + req.body.message + "",
     html: `<div> ${req.body.phone}</div><br/><div>${req.body.name}</div><br/><div>${req.body.message}</div>`
@@ -22,7 +22,7 @@ export default function (req, res) {
     if(err)
       console.log(err)
     else
-      console.log(info.response)
+      console.log(info)
   })
-  res.status(200)
+  res.status(200).end()
 }
