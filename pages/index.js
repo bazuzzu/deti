@@ -89,6 +89,7 @@ const Kids = ({ kids }) => {
 		  $('.sending').fadeOut('slow');
 	        }, 3000)			
 		console.log('Response received')
+		console.log(res.status)
 		if (res.status === 200) {
 		  console.log('Response succeeded!')
 		  setSubmitted(true)
