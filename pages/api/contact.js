@@ -13,7 +13,7 @@ export default function (req, res) {
   })
   const mailData = {
     from: 'detikino.request@gmail.com',
-    to: 'casting@detikino.ru',
+    to: 'stas.green@gmail.com',
     subject: `Заявка на кастинг`,
     text: req.body.phone + " | " + req.body.name + " | " + req.body.message + "",
     html: `<div> ${req.body.phone}</div><br/><div>${req.body.name}</div><br/><div>${req.body.message}</div>`
