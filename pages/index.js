@@ -84,19 +84,21 @@ const Kids = ({ kids }) => {
 		},
 		body: JSON.stringify(data)
 	  }).then((res) => {
-		$('.sending').show();
-		setTimeout(function(){
-		  $('.sending').fadeOut('slow');
-	        }, 3000)			
+		//console.log(res.status)
 		console.log('Response received')
-		console.log(res.status)
 		if (res.status === 200) {
+		  $('.sending').show();
+		  $('.calltoview input').val('');  
+		  setTimeout(function(){
+		    $('.sending').fadeOut('slow');
+		  }, 3000)			
 		  console.log('Response succeeded!')
 		  setSubmitted(true)
 		  setName('')
 		  setPhone('')
-		  setBody('')
+		  setMessage('')
 		}
+
 	  })
 	}
   
