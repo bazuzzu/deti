@@ -22,7 +22,7 @@ export default function (req, res) {
     if(err)
       console.log(err)
     else
-      console.log(info)
+      console.log(info.response)
   })
   res.status(200)
 }
