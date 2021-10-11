@@ -120,16 +120,6 @@ const Contact = props => (
         </ColRight>
       </Row>
       <Row>
-        <ColLeft>Расчетный счет</ColLeft>
-        <ColRight>
-          <p>№ 40802810338000036478</p>
-          <p>в ПАО Сбербанк:</p>
-          <p>БИК — 044525225</p>
-          <p>КПП — 775001001</p>
-          <p>к/с № 30101810400000000225 в ГУ ЦБ РФ</p>
-        </ColRight>
-      </Row>
-      <Row>
         <ColLeft>Адрес</ColLeft>
         <ColRight>
           <p className="mb-12">
