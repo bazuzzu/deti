@@ -107,7 +107,7 @@ const Kids = ({ kids }) => {
   return (
     <Layout>
       <Head>
-        <title>Актерское агенство школы-студии DЕТИКИНО</title>
+        <title>Актёрское агенство Школы-студии DЕТИКИНО</title>
       </Head>
       <Container
         id="boys"
@@ -142,7 +142,7 @@ const Kids = ({ kids }) => {
                   </a>
 			</div>
 		</div>	
-        <h2 className="text-3xl font-fancy pt-3 pr-12">Актерское агенство<br/> школы-студии<br/> DЕТИКИНО</h2>
+        <h2 className="text-3xl font-fancy pt-3 pr-12">Актёрское агенство<br/> Школы-студии<br/> DЕТИКИНО</h2>
 		<div className="clear"></div>
         {state.open && (
           <CupertinoPane onCloseClick={_ => setState({ open: false })}>
