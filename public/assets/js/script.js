@@ -399,9 +399,9 @@ $( document ).ready(function() {
 			$('.cupertino-pane-new .picholder').append(cloned);
 			
 			$('#pdfexport').append('<div style="width:100%" class="kidexp" data-name="'+kidname+'" ><div style="width:96px; height:145px; display:inline-block; margin-right:20px; position:relative; overflow:hidden"><img style="margin-right:20px;margin-bottom:10px;display:inline-block;width: auto;position: absolute;height: 100%;max-width: none;left: 50%; top:50%; transform: translate(-50%, -50%);"  src="'+imgsrccorr+'" /></div><div class="addinfo" style="display:inline-block; position:absolute"><p style="color:#000 !important; font-family:PoiretOne; font-weight:bold">'+kidname+'</p><p style="color:#000 !important; font-family:PoiretOne; font-weight:bold">Возраст: '+kidage+' лет</p><p style="color:#000 !important; font-family:PoiretOne; font-weight:bold; margin-bottom:10px;">Рост: '+kidheight+' см</p></div></div>')
-			$.each(linkarr, function(key, value) {
-				$('#pdfexport .addinfo').append('<p style="font-size:12px; color:#00F !important; font-family:PoiretOne; font-weight:bold" href="'+value+'">'+value+'</p>');
-			});
+			//$.each(linkarr, function(key, value) {
+			//	$('#pdfexport .addinfo').append('<p style="font-size:12px; color:#00F !important; font-family:PoiretOne; font-weight:bold" href="'+value+'">'+value+'</p>');
+			//});
 		}
 		
 		if ($('.agesection .mark.active').length>0) {
