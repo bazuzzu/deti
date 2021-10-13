@@ -537,8 +537,10 @@ const Kids = ({ kids }) => {
 					<button className="genpdf">Выгрузить</button>
 			</div>
 		</div>
+		<div className="hidecontent">
 		<div style={{'color':'#000 !important'}} id="pdfexport" className="testpdf">
 
+		</div>
 		</div>
 		<div className="sending">Ваша заявка отправлена. Спасибо!</div>
       </Container>
