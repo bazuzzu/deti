@@ -330,7 +330,7 @@ $( document ).ready(function() {
 	})
 	$('.kidcard').each(function(){
 		if ($(this).attr('src')=='&sz=w800') {
-			$(this).parent().parent().hide();
+			$(this).parent().parent().remove();
 		}
 	})
 	const mouseClickEvents = ['click'];	
@@ -351,6 +351,13 @@ $( document ).ready(function() {
 	$('.mark').click(function(e){
 		e.preventDefault();
 		var kidname = $(this).parent().text();
+		var kidage = $(this).parent().parent().find('img').attr('data-age');
+		var kidheight = $(this).parent().parent().find('img').attr('data-height');
+		var imgsrc = $(this).parent().parent().find('img').attr('src');
+		var imgsrccorr = imgsrc.replace('https://drive.google.com/thumbnail?id=','https://lh3.googleusercontent.com/d/');
+		imgsrccorr = imgsrccorr.replace('&sz=w800','')
+		//console.log(imgsrccorr);
+		
 		
 		window.triggerChange = function triggerChange(nextValue) {
 		  const element = document.querySelector('.favorities .storenames')
@@ -364,7 +371,7 @@ $( document ).ready(function() {
 		if ($(this).hasClass('active')) {
 			allkids = allkids.replace(kidname + '<br/>','');
 			allkids = allkids.replace(kidname,'');
-			console.log(allkids);
+			//console.log(allkids);
 			$('.favorities .storenames').val(allkids);
 			triggerChange();
 			$(this).removeClass('active');
@@ -374,14 +381,21 @@ $( document ).ready(function() {
 					$(this).parent().parent().remove();
 				}
 			})
+			$('#pdfexport .kidexp').each(function(){
+				if ($(this).attr('data-name')==kidname) {
+					$(this).remove();
+				}
+			});
 		} else {
 			allkids = allkids + kidname+ '<br/>';
-			console.log(allkids);
+			//console.log(allkids);
 			$('.favorities .storenames').val(allkids);
 			triggerChange();
 			$(this).addClass('active');			
 			var cloned = $(this).parent().parent().parent().clone();
 			$('.cupertino-pane-new .picholder').append(cloned);
+			
+			$('#pdfexport').append('<div style="width:100%" class="kidexp" data-name="'+kidname+'" ><div style="width:96px; height:145px; display:inline-block; margin-right:20px; position:relative; overflow:hidden"><img style="margin-right:20px;margin-bottom:10px;display:inline-block;width: auto;position: absolute;height: 100%;max-width: none;left: 50%; top:50%; transform: translate(-50%, -50%);"  src="'+imgsrccorr+'" /></div><div style="display:inline-block; position:absolute"><p style="color:#000 !important; font-family:PoiretOne; font-weight:bold">'+kidname+'</p><p style="color:#000 !important; font-family:PoiretOne; font-weight:bold">Возраст: '+kidage+' лет</p><p style="color:#000 !important; font-family:PoiretOne; font-weight:bold">Рост: '+kidheight+' см</p></div></div>')
 		}
 		
 		if ($('.agesection .mark.active').length>0) {
@@ -389,8 +403,10 @@ $( document ).ready(function() {
 		} else {
 			$('.selected').hide();
 		}
+		
 		$('.favorities .mark').bind('click',function(e){
 			e.preventDefault();
+			var kidname = $(this).parent().text(); 
 			var prop = $(this).parent().parent().parent().find('.kidcard').attr('src');
 			$('.forcopy img').each(function(){
 					if ($(this).attr('src')==prop) {
@@ -398,6 +414,11 @@ $( document ).ready(function() {
 					}
 				})
 			$(this).parent().parent().parent().remove();
+			$('#pdfexport .kidexp').each(function(){
+				if ($(this).attr('data-name')==kidname) {
+					$(this).remove();
+				}
+			});			
 			if ($('.agesection .mark.active').length>0) {
 				$('.selected').show();
 			} else {
@@ -466,6 +487,22 @@ $( document ).ready(function() {
 		})
 	})
 	
+	window.jsPDF = window.jspdf.jsPDF
+
+	var doc = new jsPDF('p', 'pt', 'letter');
+
+	$('.genpdf').click(function () {
+
+		doc.addFont("/assets/fonts/PoiretOne-Regular.ttf", "PoiretOne", "normal");
+		doc.setFont("PoiretOne");
+		doc.html(document.getElementById('pdfexport'), {
+			    margin: [20,30,20,30],
+				callback: function (doc) {
+					doc.save('Кастинг_лист.pdf');
+				}});
+	});	
+
 })
+
 
 

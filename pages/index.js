@@ -534,7 +534,11 @@ const Kids = ({ kids }) => {
                     <button type="submit" onClick={(e)=>{handleSubmit(e)}} className="flex items-center justify-center hover:bg-white hover:bg-opacity-25 hover:text-black bg-black text-white border border-black font-bold py-3 px-4 duration-150 transition-colors mb-0 w-full">
                       <RiAddLine className="mr-1" /> Пригласить
                     </button>
+					<button className="genpdf">Выгрузить</button>
 			</div>
+		</div>
+		<div style={{'color':'#000 !important'}} id="pdfexport" className="testpdf">
+
 		</div>
 		<div className="sending">Ваша заявка отправлена. Спасибо!</div>
       </Container>

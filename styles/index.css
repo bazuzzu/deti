@@ -1009,3 +1009,11 @@ body::-webkit-scrollbar {
 	text-align: center;
 	line-height: 80px;
 }
+#pdfexport {
+	clear: both;
+	display: none;
+}
+.genpdf {
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+}

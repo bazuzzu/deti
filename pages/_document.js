@@ -23,6 +23,9 @@ export default class MyDocument extends Document {
 		<script src="/assets/js/jquery-ui.min.js"></script>
 		<script src="/assets/js/jquery.ui.touch-punch.min.js"></script>
 		<script src="/assets/js/swipeslider.js"></script>
+		<script src="/assets/js/jspdf.umd.min.js"></script>
+		<script src="/assets/js/html2canvas.min.js"></script>
+		<script src="/assets/fonts/PoiretOne-Regular-normal.js"></script>		
 		<script src="https://unpkg.com/cupertino-pane/dist/cupertino-pane.min.js"></script>
 		
         </Head>
