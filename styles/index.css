@@ -508,6 +508,9 @@ footer .vk-link:hover svg path {
 	#searchform {
 		width: 100% !important;
 	}
+	.genpdf {
+		margin-top: 0.75rem;
+	}
 }
 .cupertino-pane-wrapper .max-w-lg {
 	font-size: 20px;
