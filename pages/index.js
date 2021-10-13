@@ -477,6 +477,7 @@ const Kids = ({ kids }) => {
                           alt={`${name.trim()} ${surname.trim()}`}
 						  data-height={`${height}`}
 						  data-age={`${age}`}
+						  data-links={`${links}`}
 						  data-constitution={`${constitution}`}
 						  data-eyes={`${eyes}`}
 						  data-hair={`${hair}`}
