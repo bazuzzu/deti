@@ -39,7 +39,7 @@
 }
 
 @font-face {
-    font-family: 'Poiret One';
+    font-family: 'PoiretOne';
     src: url('/assets/fonts/PoiretOne-Regular.eot');
     src: url('/assets/fonts/PoiretOne-Regular.eot?#iefix') format('embedded-opentype'),
         url('/assets/fonts/PoiretOne-Regular.woff2') format('woff2'),
@@ -52,7 +52,7 @@
 }
 
 * {
-	font-family:'Poiret One' !important;
+	font-family:'PoiretOne' !important;
 	font-weight:600 !important;
 }
 
@@ -768,6 +768,7 @@ select {
 }
 body::-webkit-scrollbar {
   width: 0px;               /* width of the entire scrollbar */
+  font-family:'PoiretOne' !important;	
 }
 @media (min-width: 640px) {
 	.cupertino-pane::-webkit-scrollbar {
