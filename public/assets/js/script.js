@@ -403,7 +403,12 @@ $( document ).ready(function() {
 				vidstring += '<p style="font-size:12px; color:#00F !important; font-family:PoiretOne; font-weight:bold" href="'+value+'">'+value+'</p>';
 			});
 			
-			$('#pdfexport').append('<div style="width:100%" class="kidexp" data-name="'+kidname+'" ><div style="width:98px; height:148px; display:inline-block; margin-right:20px; position:relative; overflow:hidden"><img style="margin-right:20px;margin-bottom:10px;display:inline-block;width: auto;position: absolute;height: 100%;max-width: none;left: 50%; top:50%; transform: translate(-50%, -50%);"  src="'+imgsrccorr+'" /></div><div class="addinfo" style="display:inline-block; position:absolute"><p style="color:#000 !important; font-family:PoiretOne; font-weight:bold">'+kidname+'</p><p style="color:#000 !important; font-family:PoiretOne; font-weight:bold">Возраст: '+kidage+' лет</p><p style="color:#000 !important; font-family:PoiretOne; font-weight:bold; margin-bottom:10px;">Рост: '+kidheight+' см</p>'+vidstring+'</div></div>')
+			var kidcount = $('.kidexp').length;
+			if ((kidcount == 0)||(kidcount == 4)) {
+			$('#pdfexport').append('<header><p><img style="position:relative; left:-20px" width="215" height="99" src="/assets/detikino_logo_word_white.png" /><div style="color:#000 !important; font-family:PoiretOne; font-weight:bold; position:absolute; left: 200px; top:20px; font-size:12px; line-height:14px;">Агенты<br/>Валентина Никитина +7 909 690 443 3<br/>Вероника Мовсесян +7 966 000 899 7</div></p></header>')
+				
+			}
+			$('#pdfexport').append('<div style="width:100%" class="kidexp" data-name="'+kidname+'" ><div style="width:105px; height:162px; display:inline-block; margin-right:20px; position:relative; overflow:hidden"><img style="margin-right:20px;margin-bottom:10px;display:inline-block;width: auto;position: absolute;height: 100%;max-width: none;left: 50%; top:50%; transform: translate(-50%, -50%);"  src="'+imgsrccorr+'" /></div><div class="addinfo" style="display:inline-block; position:absolute"><p style="color:#000 !important; font-family:PoiretOne; font-weight:bold">'+kidname+'</p><p style="color:#000 !important; font-family:PoiretOne; font-weight:bold">Возраст: '+kidage+' лет</p><p style="color:#000 !important; font-family:PoiretOne; font-weight:bold; margin-bottom:10px;">Рост: '+kidheight+' см</p>'+vidstring+'</div></div>')
 
 		}
 		
@@ -505,23 +510,22 @@ $( document ).ready(function() {
 		var header1 = 'Валентина Никитина +7 909 690 443 3';
 		var header2 = 'Вероника Мовсесян   +7 966 000 899 7';		
 		var img = new Image();
+		var totalPages = doc.internal.getNumberOfPages();
 		img.src = '/assets/detikino_logo_word_white.png'
 		console.log(img);
 		doc.addFont("/assets/fonts/PoiretOne-Regular.ttf", "PoiretOne", "normal");
-		doc.setFont("PoiretOne");
-		doc.setFontSize(12);
-		doc.addImage(img, 'PNG', 0, 0, 210, 97);
-		doc.text(header0, 240, 15, { baseline: 'top' });
-		doc.text(header1, 240, 35, { baseline: 'top' });
-		doc.text(header2, 240, 55, { baseline: 'top' });
-		setTimeout(function(){
+        doc.setFont("PoiretOne");
+        doc.setFontSize(12);
+        //doc.addImage(img, 'PNG', 0, 0, 210, 97);
+        //doc.text(header0, 240, 15, { baseline: 'top' });
+        //doc.text(header1, 240, 35, { baseline: 'top' });
+        //doc.text(header2, 240, 55, { baseline: 'top' });
 		doc.html(document.getElementById('pdfexport'), {
-			    margin: [120,30,20,30],
+			    margin: [0,30,20,30],
 				callback: function (doc) {
 					doc.save('Кастинг_лист.pdf');
 				}});
 			
-		},1000)
 	});	
 
 })
