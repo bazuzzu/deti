@@ -501,14 +501,27 @@ $( document ).ready(function() {
 	var doc = new jsPDF('p', 'pt', 'letter');
 
 	$('.genpdf').click(function () {
-
+		var header0 = 'Агенты';
+		var header1 = 'Валентина Никитина +7 909 690 443 3';
+		var header2 = 'Вероника Мовсесян   +7 966 000 899 7';		
+		var img = new Image();
+		img.src = '/assets/detikino_logo_word_white.png'
+		console.log(img);
 		doc.addFont("/assets/fonts/PoiretOne-Regular.ttf", "PoiretOne", "normal");
 		doc.setFont("PoiretOne");
+		doc.setFontSize(12);
+		doc.addImage(img, 'PNG', 0, 0, 210, 97);
+		doc.text(header0, 240, 15, { baseline: 'top' });
+		doc.text(header1, 240, 35, { baseline: 'top' });
+		doc.text(header2, 240, 55, { baseline: 'top' });
+		setTimeout(function(){
 		doc.html(document.getElementById('pdfexport'), {
-			    margin: [20,30,20,30],
+			    margin: [120,30,20,30],
 				callback: function (doc) {
 					doc.save('Кастинг_лист.pdf');
 				}});
+			
+		},1000)
 	});	
 
 })
