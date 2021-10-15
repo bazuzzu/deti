@@ -402,10 +402,11 @@ $( document ).ready(function() {
 			
 			var vidstring = '';
 			$.each(linkarr, function(key, value) {
-				var vidlink = value.replace(' ','')
-				vidstring += '<p><a style="font-size:12px; color:#00F !important; font-family:arial  !important;" href="'+vidlink+'">'+vidlink+'</a></p>';
+				var vidlink = value.replace(' ','');
+				var vidlink1 = vidlink.replace('https://','')
+				vidstring += '<p style="font-size:12px; color:#00F !important;">'+vidlink+'</p>';
 			});
-			console.log(vidstring);
+			//console.log(vidstring);
 			var kidcount = $('.kidexp').length;
 			if ((kidcount == 0)||(kidcount == 4)||(kidcount == 8)||(kidcount == 12)) {
 			$('#pdfexport').append('<header><p><img style="position:relative; left:-20px" width="215" height="99" src="/assets/detikino_logo_word_white.png" /><div style="color:#000 !important; font-family:arial  !important; position:absolute; left: 330px; width:350px; text-alight:right; top:20px; font-size:12px; line-height:14px;">Агенты<br/>Валентина Никитина +7 909 690 443 3<br/>Вероника Мовсесян +7 966 000 899 7</div></p></header>')
