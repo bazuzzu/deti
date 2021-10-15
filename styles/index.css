@@ -511,6 +511,9 @@ footer .vk-link:hover svg path {
 	.genpdf {
 		margin-top: 0.75rem;
 	}
+	body {
+		overflow-x: hidden;
+	}
 }
 .cupertino-pane-wrapper .max-w-lg {
 	font-size: 20px;
@@ -1023,6 +1026,7 @@ body::-webkit-scrollbar {
 #pdfexport {
 	clear: both;
 	display: block;
+	position: relative;
 }
 .genpdf {
 	padding-top: 0.75rem;
