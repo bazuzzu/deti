@@ -554,6 +554,7 @@ const Kids = ({ kids }) => {
 		</div>
 		</div>
 		<div className="sending">Ваша заявка отправлена. Спасибо!</div>
+		<div className="generating">Ваша заявка отправлена. Спасибо!</div>
       </Container>
     </Layout>
   )

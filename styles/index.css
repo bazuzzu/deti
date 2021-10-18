@@ -1018,6 +1018,20 @@ body::-webkit-scrollbar {
 	text-align: center;
 	line-height: 80px;
 }
+.generating {
+	background: #171F22;
+	display: none;
+	width: 300px;
+	height: 80px;
+	z-index: 50;
+	position: fixed;
+	top: 50%;
+	margin-top: -40px;
+	left: 50%;
+	margin-left: -150px;
+	text-align: center;
+	line-height: 80px;
+}
 .hidecontent {
 	visibility: hidden;
 	height: 0px;
