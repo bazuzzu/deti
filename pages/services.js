@@ -44,7 +44,7 @@ const Contact = props => (
       <title>Услуги</title>
     </Head>
     <Container>
-      <h2 className="text-3xl font-fancy pt-3 pr-12">Контакты</h2>
+      <h2 className="text-3xl font-fancy pt-3 pr-12">Услуги актёрам</h2>
       <div className="text-xl lg:text-2xl flex flex-col md:flex-row">
         <div>
           <h1 className="md:mt-8 mb-8 md:mb-12 text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-heavy font-sans tracking-tighter leading-tight">
@@ -74,6 +74,9 @@ const Contact = props => (
         Продолжительность съёмки — 1 час.
 
       </Row>
+      <h1 className="md:mt-8 mb-8 md:mb-12 text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-heavy font-sans tracking-tighter leading-tight">
+        Самопробы
+      </h1>
 
       <Row>
       </Row>
