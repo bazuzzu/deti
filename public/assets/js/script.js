@@ -407,7 +407,7 @@ $( document ).ready(function() {
 			});
 			//console.log(vidstring);
 			var kidcount = $('.kidexp').length;
-			if ((kidcount == 0)||(kidcount == 4)||(kidcount == 8)||(kidcount == 12)) {
+			if ((kidcount == 0)||(kidcount == 4)||(kidcount == 8)||(kidcount == 12)||(kidcount == 16)||(kidcount == 20)||(kidcount == 24)||(kidcount == 28)||(kidcount == 32)||(kidcount == 36)||(kidcount == 40)) {
 			$('#pdfexport').append('<header><p><img style="position:relative; left:-20px" width="215" height="99" src="/assets/detikino_logo_word_white.png" /><div style="color:#000 !important; font-family:arial  !important; position:absolute; left: 330px; width:350px; text-alight:right; top:20px; font-size:12px; line-height:14px;">Агенты<br/>Валентина Никитина +7 909 690 443 3<br/>Вероника Мовсесян +7 966 000 899 7</div></p></header>')
 				
 			}
@@ -523,7 +523,7 @@ $( document ).ready(function() {
         //doc.text(header1, 240, 35, { baseline: 'top' });
         //doc.text(header2, 240, 55, { baseline: 'top' });
 		doc.html(document.getElementById('pdfexport'), {
-			    margin: [0,30,20,34],
+			    margin: [0,30,20,36],
 				callback: function (doc) {
 					doc.save('Кастинг_лист.pdf');
 				}});
