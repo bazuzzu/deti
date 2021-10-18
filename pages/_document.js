@@ -17,7 +17,9 @@ export default class MyDocument extends Document {
 		  <link
             href="/assets/css/swipeslider.css"
             rel="stylesheet"
-          />		
+          />	
+		<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Jost" />
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script src="/assets/js/script.js"></script>
 		<script src="/assets/js/jquery-ui.min.js"></script>
