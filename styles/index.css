@@ -1031,7 +1031,6 @@ body::-webkit-scrollbar {
 	left: 50%;
 	margin-left: -150px;
 	text-align: center;
-	line-height: 80px;
 }
 .hidecontent {
 	visibility: hidden;
