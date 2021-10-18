@@ -210,7 +210,7 @@ $( document ).ready(function() {
 		}
 		
 		
-		console.log(allcheckarr);		
+		//console.log(allcheckarr);		
 		
 		$('.sunday-tab .object-cover').parent().parent().show();
 		
