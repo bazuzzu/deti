@@ -217,7 +217,7 @@ $( document ).ready(function() {
 
 		if (f1 in allcheckarr) {
 			$('.sunday-tab .object-cover').each(function(){
-				if ($(this).attr('data-constitution')==allcheckarr['constitution'][0]||$(this).attr('data-constitution')==allcheckarr['constitution'][1]) {
+				if ($(this).attr('data-constitution')==allcheckarr['constitution'][0]||$(this).attr('data-constitution')==allcheckarr['constitution'][1]||$(this).attr('data-constitution')==allcheckarr['constitution'][2]||$(this).attr('data-constitution')==allcheckarr['constitution'][3]) {
 					//
 				} else {
 					$(this).parent().parent().hide();
@@ -226,7 +226,7 @@ $( document ).ready(function() {
 		} 
 		if (f2 in allcheckarr) {
 			$('.sunday-tab .object-cover').each(function(){
-				if ($(this).attr('data-eyes')==allcheckarr['eyes'][0]||$(this).attr('data-eyes')==allcheckarr['eyes'][1]) {
+				if ($(this).attr('data-eyes')==allcheckarr['eyes'][0]||$(this).attr('data-eyes')==allcheckarr['eyes'][1]||$(this).attr('data-eyes')==allcheckarr['eyes'][2]||$(this).attr('data-eyes')==allcheckarr['eyes'][3]) {
 					//
 				} else {
 					$(this).parent().parent().hide();
@@ -235,7 +235,7 @@ $( document ).ready(function() {
 		} 		
 		if (f3 in allcheckarr) {
 			$('.sunday-tab .object-cover').each(function(){
-				if ($(this).attr('data-hair')==allcheckarr['hair'][0]||$(this).attr('data-hair')==allcheckarr['hair'][1]) {
+				if ($(this).attr('data-hair')==allcheckarr['hair'][0]||$(this).attr('data-hair')==allcheckarr['hair'][1]||$(this).attr('data-hair')==allcheckarr['hair'][2]||$(this).attr('data-hair')==allcheckarr['hair'][3]||$(this).attr('data-hair')==allcheckarr['hair'][4]||$(this).attr('data-hair')==allcheckarr['hair'][5]||$(this).attr('data-hair')==allcheckarr['hair'][6]||$(this).attr('data-hair')==allcheckarr['hair'][7]||$(this).attr('data-hair')==allcheckarr['hair'][8]||$(this).attr('data-hair')==allcheckarr['hair'][9]) {
 					//
 				} else {
 					$(this).parent().parent().hide();
@@ -244,7 +244,7 @@ $( document ).ready(function() {
 		} 		
 		if (f4 in allcheckarr) {
 			$('.sunday-tab .object-cover').each(function(){
-				if ($(this).attr('data-hairlength')==allcheckarr['hairlength'][0]||$(this).attr('data-hairlength')==allcheckarr['hairlength'][1]) {
+				if ($(this).attr('data-hairlength')==allcheckarr['hairlength'][0]||$(this).attr('data-hairlength')==allcheckarr['hairlength'][1]||$(this).attr('data-hairlength')==allcheckarr['hairlength'][2]||$(this).attr('data-hairlength')==allcheckarr['hairlength'][3]) {
 					//
 				} else {
 					$(this).parent().parent().hide();
