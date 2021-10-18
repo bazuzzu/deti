@@ -720,7 +720,7 @@ $( document ).ready(function() {
         //doc.text(header1, 240, 35, { baseline: 'top' });
         //doc.text(header2, 240, 55, { baseline: 'top' });
 		doc.html(document.getElementById('pdfexport'), {
-			    margin: [0,30,22,36],
+			    margin: [0,30,18,36],
 				callback: function (doc) {
 					doc.save('Кастинг_лист.pdf');
 		}});
