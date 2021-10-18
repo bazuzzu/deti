@@ -92,6 +92,9 @@ $( document ).ready(function() {
 	var uniqueinstr = instrarr.filter(function(itm, i, instrarr) {
 		return i == instrarr.indexOf(itm);
 	});
+	
+
+	
 	uniqueconst.sort();
 	uniqueeyes.sort();
 	uniquehair.sort();
@@ -134,10 +137,10 @@ $( document ).ready(function() {
 		$('#languages select').append($("<option></option>").attr("value", key+1).text(value)); 
 		//$('#languages').append('<label><input type="checkbox" value="'+value+'">'+value+'</label>')		
 	});	
-	$.each(uniquevocal, function(key, value) {   
-		$('#vocal select').append($("<option></option>").attr("value", key+1).text(value)); 
+	//$.each(uniquevocal, function(key, value) {   
+		//$('#vocal select').append($("<option></option>").attr("value", key+1).text(value)); 
 		//$('#vocal').append('<label><input type="checkbox" value="'+value+'">'+value+'</label>')
-	});	
+	//});	
 	$.each(uniqueinstr, function(key, value) {   
 		$('#instruments select').append($("<option></option>").attr("value", key+1).text(value)); 
 		//$('#instruments').append('<label><input type="checkbox" value="'+value+'">'+value+'</label>')		
@@ -146,12 +149,18 @@ $( document ).ready(function() {
 	var checkconstarr = [];
 	var checkeyestarr = [];
 	var checkhairarr = [];
-	var checkhairltarr = [];	
+	var checkhairltarr = [];
+	var langarr = [];
+	var vocarr = [];
+	var instrarr = [];	
 	var allcheckarr = [];
 	var f1 = 'constitution';
 	var f2 = 'eyes';
 	var f3 = 'hair';
 	var f4 = 'hairlength';
+	var f5 = 'languages';
+	var f6 = 'vocal';
+	var f7 = 'instruments';
 	var conval ='';
 	var emptyArray = [];
 	$('.filtercheckbox input').change(function(){
@@ -172,6 +181,18 @@ $( document ).ready(function() {
 				conval = $(this).val();
 				checkhairltarr.push(conval);
 				allcheckarr['hairlength'] = checkhairltarr;
+			} else if ($(this).parent().parent().attr('id')=='languages') {
+				conval = $(this).val();
+				langarr.push(conval);
+				allcheckarr['languages'] = langarr;
+			} else if ($(this).parent().parent().attr('id')=='vocal') {
+				conval = $(this).val();
+				vocarr.push(conval);
+				allcheckarr['vocal'] = vocarr;
+			} else if ($(this).parent().parent().attr('id')=='instruments') {
+				conval = $(this).val();
+				instrarr.push(conval);
+				allcheckarr['instruments'] = instrarr;
 			}
 		} else {
 			if ($(this).parent().parent().attr('id')=='constitution') {
@@ -205,6 +226,30 @@ $( document ).ready(function() {
 					delete allcheckarr['hairlength'];
 				} else {
 					allcheckarr['hairlength'] = checkhairltarr;
+				}
+			} else if ($(this).parent().parent().attr('id')=='languages') {
+				conval = $(this).val();
+				langarr.splice($.inArray(conval,langarr),1)
+				if (langarr=='') {
+					delete allcheckarr['languages'];
+				} else {
+					allcheckarr['languages'] = langarr;
+				}
+			} else if ($(this).parent().parent().attr('id')=='vocal') {
+				conval = $(this).val();
+				vocarr.splice($.inArray(conval,vocarr),1)
+				if (vocarr=='') {
+					delete allcheckarr['vocal'];
+				} else {
+					allcheckarr['vocal'] = vocarr;
+				}
+			} else if ($(this).parent().parent().attr('id')=='instruments') {
+				conval = $(this).val();
+				instrarr.splice($.inArray(conval,instrarr),1)
+				if (vocarr=='') {
+					delete allcheckarr['instruments'];
+				} else {
+					allcheckarr['instruments'] = instrarr;
 				}
 			}
 		}
@@ -245,6 +290,33 @@ $( document ).ready(function() {
 		if (f4 in allcheckarr) {
 			$('.sunday-tab .object-cover').each(function(){
 				if ($(this).attr('data-hairlength')==allcheckarr['hairlength'][0]||$(this).attr('data-hairlength')==allcheckarr['hairlength'][1]||$(this).attr('data-hairlength')==allcheckarr['hairlength'][2]||$(this).attr('data-hairlength')==allcheckarr['hairlength'][3]) {
+					//
+				} else {
+					$(this).parent().parent().hide();
+				}
+			});
+		} 		
+		if (f5 in allcheckarr) {
+			$('.sunday-tab .object-cover').each(function(){
+				if ($(this).attr('data-languages').indexOf(allcheckarr['languages'][0]) >= 0||$(this).attr('data-languages').indexOf(allcheckarr['languages'][1]) >= 0||$(this).attr('data-languages').indexOf(allcheckarr['languages'][2]) >= 0||$(this).attr('data-languages').indexOf(allcheckarr['languages'][3]) >= 0||$(this).attr('data-languages').indexOf(allcheckarr['languages'][4]) >= 0||$(this).attr('data-languages').indexOf(allcheckarr['languages'][5]) >= 0||$(this).attr('data-languages').indexOf(allcheckarr['languages'][6]) >= 0||$(this).attr('data-languages').indexOf(allcheckarr['languages'][7]) >= 0) {
+					//
+				} else {
+					$(this).parent().parent().hide();
+				}
+			});
+		} 		
+		if (f6 in allcheckarr) {
+			$('.sunday-tab .object-cover').each(function(){
+				if ($(this).attr('data-vocal').indexOf(allcheckarr['vocal'][0]) >= 0||$(this).attr('data-vocal').indexOf(allcheckarr['vocal'][1]) >= 0||$(this).attr('data-vocal').indexOf(allcheckarr['vocal'][2]) >= 0||$(this).attr('data-vocal').indexOf(allcheckarr['vocal'][3]) >= 0) {
+					//
+				} else {
+					$(this).parent().parent().hide();
+				}
+			});
+		} 		
+		if (f7 in allcheckarr) {
+			$('.sunday-tab .object-cover').each(function(){
+				if ($(this).attr('data-instruments').indexOf(allcheckarr['instruments'][0]) >= 0||$(this).attr('data-instruments').indexOf(allcheckarr['instruments'][1]) >= 0||$(this).attr('data-instruments').indexOf(allcheckarr['instruments'][2]) >= 0||$(this).attr('data-instruments').indexOf(allcheckarr['instruments'][3]) >= 0||$(this).attr('data-instruments').indexOf(allcheckarr['instruments'][4]) >= 0) {
 					//
 				} else {
 					$(this).parent().parent().hide();

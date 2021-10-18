@@ -412,17 +412,32 @@ const Kids = ({ kids }) => {
 				</div>
 				<div className="filtercheckbox" id="hairlength">
 					<div>Длина волос</div>
-				</div>				<div className="filterselect" id="languages">
+				</div>				
+				<div className="filtercheckbox" id="languages">
 					<div>Иностранные языки</div>
-					<select></select>
+					<label><input type="checkbox" value="Английский"/>Английский</label>
+					<label><input type="checkbox" value="Испанский"/>Испанский</label>
+					<label><input type="checkbox" value="Итальянский"/>Итальянский</label>
+					<label><input type="checkbox" value="Немецкий"/>Немецкий</label>
+					<label><input type="checkbox" value="Грузинский"/>Грузинский</label>
+					<label><input type="checkbox" value="Китайский"/>Китайский</label>
+					<label><input type="checkbox" value="Французский"/>Французский</label>
+					<label><input type="checkbox" value="Болгарский"/>Болгарский</label>
 				</div>
-				<div className="filterselect" id="vocal">
+				<div className="filtercheckbox" id="vocal">
 					<div>Вокал</div>
-					<select></select>
+					<label><input type="checkbox" value="Академический"/>Академический</label>
+					<label><input type="checkbox" value="Джазовый"/>Джазовый</label>
+					<label><input type="checkbox" value="Эстрадный"/>Эстрадный</label>
+					<label><input type="checkbox" value="Хор"/>Хор</label>
 				</div>
-				<div className="filterselect" id="instruments">
+				<div className="filtercheckbox" id="instruments">
 					<div>Музыкальные инструменты</div>
-					<select></select>
+					<label><input type="checkbox" value="Духовые"/>Духовые</label>
+					<label><input type="checkbox" value="Ударные"/>Ударные</label>
+					<label><input type="checkbox" value="Клавишные"/>Клавишные</label>
+					<label><input type="checkbox" value="Струнные"/>Струнные</label>
+					<label><input type="checkbox" value="Смычковые"/>Смычковые</label>
 				</div>
 			
 
