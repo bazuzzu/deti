@@ -253,10 +253,8 @@ $( document ).ready(function() {
 				}
 			}
 		}
-		
-		
-		//console.log(allcheckarr);		
-		
+	
+	
 		$('.sunday-tab .object-cover').parent().parent().show();
 		
 
@@ -375,7 +373,7 @@ $( document ).ready(function() {
 		e.preventDefault();
 		$('.filtershow').show();
 		$('.filters').hide();
-		$('.add_filter_but').hide();
+		$('.add_filter_but_act').hide();
 		$('.add_filters').hide();
 		$(this).hide();
 	})
@@ -412,6 +410,7 @@ $( document ).ready(function() {
 		$('#heightinputmin').val(minh);
 		$('#heightinputmax').val(maxh);
 		$('#searchform').val('');
+		$('.filtercheckbox input').prop( "checked", false );
 	});	
 	$('.agefilt input').change(function(){
 		var minval=parseInt($('#ageinputmin').val());
