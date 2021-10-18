@@ -39,7 +39,11 @@ $( document ).ready(function() {
 		constitutionarr.push(constitution);
 		eyesarr.push(eyes);
 		hairarr.push(hair);
-		hairlarr.push(hairl);
+		//hairlarr.push(hairl);
+		if (hairl!=''){
+			hairlarr.push(hairl);	
+		}
+		
 		haircolarr.push(haircol);
 		haircutarr.push(haircut);
 		typearr.push(type);
@@ -102,16 +106,20 @@ $( document ).ready(function() {
 		$(this).prepend("<option value='0'>-</option>");
 	});
 	$.each(uniqueconst, function(key, value) {   
-		$('#constitution select').append($("<option></option>").attr("value", key+1).text(value)); 
+		//$('#constitution select').append($("<option></option>").attr("value", key+1).text(value)); 
+		$('#constitution').append('<label><input type="checkbox" value="'+value+'">'+value+'</label>')
 	});	
 	$.each(uniqueeyes, function(key, value) {   
-		$('#eyes select').append($("<option></option>").attr("value", key+1).text(value)); 
+		//$('#eyes select').append($("<option></option>").attr("value", key+1).text(value)); 
+		$('#eyes').append('<label><input type="checkbox" value="'+value+'">'+value+'</label>')		
 	});	
 	$.each(uniquehair, function(key, value) {   
-		$('#hair select').append($("<option></option>").attr("value", key+1).text(value)); 
+		//$('#hair select').append($("<option></option>").attr("value", key+1).text(value)); 
+		$('#hair').append('<label><input type="checkbox" value="'+value+'">'+value+'</label>')
 	});	
 	$.each(uniquehairl, function(key, value) {   
-		$('#hairlength select').append($("<option></option>").attr("value", key+1).text(value)); 
+		//$('#hairlength select').append($("<option></option>").attr("value", key+1).text(value)); 
+		$('#hairlength').append('<label><input type="checkbox" value="'+value+'">'+value+'</label>')
 	});	
 	$.each(uniquecolhair, function(key, value) {   
 		$('#colorready select').append($("<option></option>").attr("value", key+1).text(value)); 
@@ -124,14 +132,131 @@ $( document ).ready(function() {
 	});	
 	$.each(uniquelang, function(key, value) {   
 		$('#languages select').append($("<option></option>").attr("value", key+1).text(value)); 
+		//$('#languages').append('<label><input type="checkbox" value="'+value+'">'+value+'</label>')		
 	});	
 	$.each(uniquevocal, function(key, value) {   
 		$('#vocal select').append($("<option></option>").attr("value", key+1).text(value)); 
+		//$('#vocal').append('<label><input type="checkbox" value="'+value+'">'+value+'</label>')
 	});	
 	$.each(uniqueinstr, function(key, value) {   
 		$('#instruments select').append($("<option></option>").attr("value", key+1).text(value)); 
+		//$('#instruments').append('<label><input type="checkbox" value="'+value+'">'+value+'</label>')		
 	});	
 
+	var checkconstarr = [];
+	var checkeyestarr = [];
+	var checkhairarr = [];
+	var checkhairltarr = [];	
+	var allcheckarr = [];
+	var f1 = 'constitution';
+	var f2 = 'eyes';
+	var f3 = 'hair';
+	var f4 = 'hairlength';
+	var conval ='';
+	var emptyArray = [];
+	$('.filtercheckbox input').change(function(){
+		if ($(this).is(':checked')) {
+			if ($(this).parent().parent().attr('id')=='constitution') {
+				conval = $(this).val();
+				checkconstarr.push(conval);
+				allcheckarr['constitution'] = checkconstarr;
+			} else if ($(this).parent().parent().attr('id')=='eyes') {
+				conval = $(this).val();
+				checkeyestarr.push(conval);
+				allcheckarr['eyes'] = checkeyestarr;
+			} else if ($(this).parent().parent().attr('id')=='hair') {
+				conval = $(this).val();
+				checkhairarr.push(conval);
+				allcheckarr['hair'] = checkhairarr;
+			} else if ($(this).parent().parent().attr('id')=='hairlength') {
+				conval = $(this).val();
+				checkhairltarr.push(conval);
+				allcheckarr['hairlength'] = checkhairltarr;
+			}
+		} else {
+			if ($(this).parent().parent().attr('id')=='constitution') {
+				conval = $(this).val();
+				checkconstarr.splice($.inArray(conval,checkconstarr),1);
+				if (checkconstarr=='') {
+					delete allcheckarr['constitution'];
+				} else {
+					allcheckarr['constitution'] = checkconstarr;
+				}
+			} else if ($(this).parent().parent().attr('id')=='eyes') {
+				conval = $(this).val();
+				checkeyestarr.splice($.inArray(conval,checkeyestarr),1)
+				if (checkeyestarr=='') {
+					delete allcheckarr['eyes'];
+				} else {
+					allcheckarr['eyes'] = checkeyestarr;
+				}
+			} else if ($(this).parent().parent().attr('id')=='hair') {
+				conval = $(this).val();
+				checkhairarr.splice($.inArray(conval,checkhairarr),1)
+				if (checkhairarr=='') {
+					delete allcheckarr['hair'];
+				} else {
+					allcheckarr['hair'] = checkhairarr;
+				}
+			} else if ($(this).parent().parent().attr('id')=='hairlength') {
+				conval = $(this).val();
+				checkhairltarr.splice($.inArray(conval,checkhairltarr),1)
+				if (checkhairltarr=='') {
+					delete allcheckarr['hairlength'];
+				} else {
+					allcheckarr['hairlength'] = checkhairltarr;
+				}
+			}
+		}
+		
+		
+		console.log(allcheckarr);		
+		
+		$('.sunday-tab .object-cover').parent().parent().show();
+		
+
+		if (f1 in allcheckarr) {
+			$('.sunday-tab .object-cover').each(function(){
+				if ($(this).attr('data-constitution')==allcheckarr['constitution'][0]||$(this).attr('data-constitution')==allcheckarr['constitution'][1]) {
+					//
+				} else {
+					$(this).parent().parent().hide();
+				}
+			});
+		} 
+		if (f2 in allcheckarr) {
+			$('.sunday-tab .object-cover').each(function(){
+				if ($(this).attr('data-eyes')==allcheckarr['eyes'][0]||$(this).attr('data-eyes')==allcheckarr['eyes'][1]) {
+					//
+				} else {
+					$(this).parent().parent().hide();
+				}
+			});
+		} 		
+		if (f3 in allcheckarr) {
+			$('.sunday-tab .object-cover').each(function(){
+				if ($(this).attr('data-hair')==allcheckarr['hair'][0]||$(this).attr('data-hair')==allcheckarr['hair'][1]) {
+					//
+				} else {
+					$(this).parent().parent().hide();
+				}
+			});
+		} 		
+		if (f4 in allcheckarr) {
+			$('.sunday-tab .object-cover').each(function(){
+				if ($(this).attr('data-hairlength')==allcheckarr['hairlength'][0]||$(this).attr('data-hairlength')==allcheckarr['hairlength'][1]) {
+					//
+				} else {
+					$(this).parent().parent().hide();
+				}
+			});
+		} 		
+
+
+	});
+		
+
+	
 	var filterarr = {};
 	$('.filters select').change(function(){
 		var constval = $(this).find('option:selected').text();

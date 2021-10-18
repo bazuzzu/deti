@@ -401,23 +401,18 @@ const Kids = ({ kids }) => {
 			</div>
 
 			<div className="add_filters">
-				<div className="filterselect" id="constitution">
+				<div className="filtercheckbox" id="constitution">
 					<div>Телосложение</div>
-					<select></select>
 				</div>
-				<div className="filterselect" id="eyes">
+				<div className="filtercheckbox" id="eyes">
 					<div>Цвет глаз</div>
-					<select></select>
 				</div>
-				<div className="filterselect" id="hair">
+				<div className="filtercheckbox" id="hair">
 					<div>Цвет волос</div>
-					<select></select>
 				</div>
-				<div className="filterselect" id="hairlength">
+				<div className="filtercheckbox" id="hairlength">
 					<div>Длина волос</div>
-					<select></select>
-				</div>
-				<div className="filterselect" id="languages">
+				</div>				<div className="filterselect" id="languages">
 					<div>Иностранные языки</div>
 					<select></select>
 				</div>
