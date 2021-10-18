@@ -402,8 +402,9 @@ $( document ).ready(function() {
 			
 			var vidstring = '';
 			$.each(linkarr, function(key, value) {
-				var vidlink = value.replace(' ','')
-				vidstring += '<p><a style="font-size:12px; color:#00F !important; font-family:arial  !important;" href="'+vidlink+'">'+vidlink+'</a></p>';
+				var vidlink = value.replace(' ','');
+				var vidlink1 = vidlink.replace('https://','');
+				vidstring += '<p><a style="font-size:12px; color:#00F !important; font-family:arial  !important;" href="'+vidlink+'">www.'+vidlink1+'</a></p>';
 			});
 			//console.log(vidstring);
 			var kidcount = $('.kidexp').length;
