@@ -31,7 +31,7 @@ const Menu = props => (
           <Logo className="mb-8 text-center transform scale-125 sm:scale-150" />
         </a>
         <div className="mb-8 w-full mainmenu">
-          <Link href="#">Услуги</Link>
+          <Link href="services">Услуги</Link>
           <Link href="#">О нас</Link>
           <Link href="/contact">Контакты</Link>
         </div>
