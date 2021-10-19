@@ -728,7 +728,7 @@ select {
 	height:40rem;
 }
 .darkmode * {
-	color:#FFF !important;
+	color:#FFF;
 }
 .darkmode.bg-gray-100  {
 	background-color: #171F22 !important;
