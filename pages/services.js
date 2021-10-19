@@ -45,9 +45,9 @@ const Contact = props => (
     </Head>
     <Container>
     <div className="services"> 
-    <h2 className="text-3xl font-fancy pt-3 pr-12">Услуги</h2>
+    <h2 className="text-3xl font-fancy pt-3 pr-12">Услуги.</h2>
           <h3 className="md:mt-8 mb-8 md:mb-12 text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-heavy font-sans tracking-tighter leading-tight">
-          Актёрам.
+          Актёрам
           </h3>
       <h2 className="text-3xl font-fancy pt-3 pr-12">Профессиональное портфолио</h2>
       <br/>
@@ -109,12 +109,12 @@ const Contact = props => (
         </ColRight>
         </Row>
         <br/>
-        <p>Записаться на съёмку можно по телефону     <Link href="+79264626385">+7 926 462 63 85.</Link></p>
-        <p>Для записи пробы с преподавателем     <Link href="+79660008997">+7 966 000 899 7.</Link></p>
-        <p className="yellow nomar" id="school">*для учеников Школы-студии «DЕТИКИНО»</p>
+        <p>Записаться на съёмку можно по телефону &nbsp;&nbsp;&nbsp;&nbsp;<Link href="tel:+79264626385">+7 926 462 63 85.</Link></p>
+        <p>Для записи пробы с преподавателем &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Link href="tel:+79660008997">+7 966 000 899 7.</Link></p>
+        <a href="http://detikino.ru" target="_blank"><p className="yellow nomar" id="school"><strong>*для учеников Школы-студии «DЕТИКИНО»</strong></p></a>
         <br/><br/>
       <h1 className="md:mt-8 mb-8 md:mb-12 text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-heavy font-sans tracking-tighter leading-tight">
-      Киностудиям.
+      Киностудиям
       </h1>
       <h2 className="text-3xl font-fancy pt-3 pr-12">Проведение проб</h2>
       <br/>
@@ -128,7 +128,7 @@ const Contact = props => (
        <br/> 
       Мы готовы предоставить одного из наших преподавателей в качестве актёрского коуча для подготовки детей к съёмке, разбора и разучивания с ними сцены, настройки на неё.
       <br/>
-      Стоимость услуг кинокомпаниям оговаривается с учётом требуемых ресурсов и объёмов по телефону     <Link href="tel:+79660008997">+7 966 000 899 7</Link>.
+      Стоимость услуг кинокомпаниям оговаривается с учётом требуемых ресурсов и объёмов по телефону     <Link href="tel:+79660008997">+7 966 000 899 7.</Link>
     </div>
     </Container>
   </Layout>

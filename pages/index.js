@@ -116,7 +116,7 @@ const Kids = ({ kids }) => {
  		<a href="/" className="blacklogo toplogo"></a>
 		
 		<div className="topcontacts">
-			<a className="maincont" href="tel:+79096904433">+7 (909) 690-44-33</a>
+			<a className="maincont" href="tel:+79096904433">+7 909 690 44 33</a>
 			<a className="maincont" href="email:casting@detikino.ru">casting@detikino.ru</a>
 			<div className="mainsocial">
                   <a

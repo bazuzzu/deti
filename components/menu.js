@@ -44,7 +44,7 @@ const Menu = props => (
               className="text-white hover:bg-white hover:text-black border border-white font-bold py-3 px-4 sm:px-8 duration-150 transition-colors mb-6 lg:mb-0"
               href="tel:+79096904433"
             >
-              +7 (909) 690-44-33
+              +7 909 690 44 33
             </a>
           </p>
         </div>

@@ -514,7 +514,13 @@ footer .vk-link:hover svg path {
 	}
 	.display-block {
 		display: block;
-	}	
+	}
+	.services .justify-center	{
+		margin-bottom: 0.75rem;
+	}
+	.yellow.nomar {
+		margin-top: 0.75rem;
+	}
 }
 .cupertino-pane-wrapper .max-w-lg {
 	font-size: 20px;
@@ -1060,9 +1066,14 @@ body::-webkit-scrollbar {
 	margin-right: 0.5rem;
 	display:inline-block;
 }
-.yellow, .yellow strong {
+.yellow {
 	display: inline-block;
 	color: #f7c509 !important;
+}
+.yellow strong {
+	display: inline-block;
+	color: #f7c509 !important;
+	font-weight: 400 !important;
 }
 .yellow.nomar {
 	margin-left: 0;
@@ -1072,7 +1083,7 @@ body::-webkit-scrollbar {
 	width: 40px;
 	display: inline-block;
 }
-.yellow strong {
+.justify-center .yellow strong {
 	width: 40px;
 	margin-left: 0.5rem;
 }
