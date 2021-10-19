@@ -43,7 +43,7 @@ export default function Footer() {
                   className="text-gray-600 hover:text-gray-800"
                   href="tel:+79096904433"
                 >
-                  +7 (909) 690-44-33
+                  +7 909 690 44 33
                 </a>
               </li>
               <li>
