@@ -100,14 +100,6 @@ const Contact = props => (
           </p>
         </ColRight>
         </Row>
-      <Row>        
-        <ColLeft>Только с оператором</ColLeft>
-        <ColRight>
-          <p>
-          <strong>1500</strong><span className="rub">₽</span>  |  <a href="#school" className="yellow"><strong>1000</strong><span className="rub">₽</span></a>
-          </p>
-        </ColRight>
-        </Row>
         <br/>
         <p>Записаться на съёмку можно по телефону &nbsp;&nbsp;&nbsp;&nbsp;<Link href="tel:+79264626385">+7 926 462 63 85.</Link></p>
         <p>Для записи пробы с преподавателем &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Link href="tel:+79660008997">+7 966 000 899 7.</Link></p>
