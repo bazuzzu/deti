@@ -508,6 +508,13 @@ footer .vk-link:hover svg path {
 	body {
 		overflow-x: hidden;
 	}
+	.filtercheckbox label {
+		min-width: 155px;
+		margin-right: 0 !important;
+	}
+	.display-block {
+		display: block;
+	}	
 }
 .cupertino-pane-wrapper .max-w-lg {
 	font-size: 20px;
