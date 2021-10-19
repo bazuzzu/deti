@@ -45,11 +45,11 @@ const Contact = props => (
     </Head>
     <Container>
     <div className="services"> 
-    <h2 className="text-3xl font-fancy pt-3 pr-12">Услуги.</h2>
+    <h2 className="text-3xl font-fancy pt-3 pr-12">Услуги</h2>
           <h3 className="md:mt-8 mb-8 md:mb-12 text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-heavy font-sans tracking-tighter leading-tight">
           Актёрам
           </h3>
-      <h2 className="text-3xl font-fancy pt-3 pr-12">Профессиональное портфолио</h2>
+      <h2 className="text-3xl font-fancy pt-3 pr-12">Профессиональное портфолио.</h2>
       <br/>
       <Row>
       <div className="mb-8">
@@ -114,7 +114,7 @@ const Contact = props => (
         <a href="http://detikino.ru" target="_blank"><p className="yellow nomar" id="school"><strong>*для учеников Школы-студии «DЕТИКИНО»</strong></p></a>
         <br/><br/>
       <h1 className="md:mt-8 mb-8 md:mb-12 text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-heavy font-sans tracking-tighter leading-tight">
-      Киностудиям
+      Киностудиям.
       </h1>
       <h2 className="text-3xl font-fancy pt-3 pr-12">Проведение проб</h2>
       <br/>
