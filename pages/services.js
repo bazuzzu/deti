@@ -37,7 +37,6 @@ const Link = ({ children, className, ...rest }) => (
     {children}
   </a>
 )
-
 const Contact = props => (
   <Layout>
     <Head>
