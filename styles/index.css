@@ -430,9 +430,6 @@ footer .vk-link:hover svg path {
 		padding-right: 0;
 		width: 190px !important;
 	}
-	.blacklogo.toplogo {
-
-	}
 	.footlogo .list-none {
 		text-align: left !important;
 	}
@@ -467,9 +464,6 @@ footer .vk-link:hover svg path {
 	}
 	.maincont {
 		display: block;
-	}
-	.slideholder.h-72 {
-
 	}
 	.mainsocial {
 		position: absolute;
@@ -820,15 +814,11 @@ body::-webkit-scrollbar {
 	.cupertino-pane-wrapper .max-w-lg {
 		float: left;
 	}
-	.cupertino-pane-wrapper iframe {
-	}
 	.calltoview {
 		max-width: 500px;
 		margin: auto;
 		position: relative;
 		top:20px;
-	}
-	.mb-2.calltoview {
 	}
 	.slideholder.h-72 {
 		height: 100vh !important;
@@ -1060,4 +1050,22 @@ body::-webkit-scrollbar {
 }
 .rub {
 	opacity: 0.7;
+	margin-right: 0.5rem;
+	display:inline-block;
+}
+.yellow, .yellow strong {
+	display: inline-block;
+	color: #f7c509 !important;
+}
+.yellow.nomar {
+	margin-left: 0;
+}
+.justify-center strong {
+	font-weight: 400 !important;
+	width: 40px;
+	display: inline-block;
+}
+.yellow strong {
+	width: 40px;
+	margin-left: 0.5rem;
 }

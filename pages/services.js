@@ -11,17 +11,17 @@ import VkIcon from "../components/vk-icon"
 import classnames from "classnames"
 
 const Row = ({ children }) => (
-  <div className="flex flex-col md:flex-row font-light  mb-8">
+  <div className="flex flex-col md:flex-row font-light justify-center">
     {children}
   </div>
 )
 const ColLeft = ({ children }) => (
-  <div className="font-light font-fancy align-top md:pr-20 text-gray-600 mb-2 md:w-4/12 fadein-left">
+  <div className="font-light font-fancy md:text-right align-top md:pr-20 text-gray-600 mb-2 md:w-5/12 fadein-left">
     {children}
   </div>
 )
 const ColRight = ({ children }) => (
-  <div className="font-light font-fancy mr-2 align-top md:pr-4 md:w-8/12 fadein">
+  <div className="font-light font-fancy mr-2 align-top md:pr-4 md:w-7/12 fadein">
     {children}
   </div>
 )
@@ -44,131 +44,80 @@ const Contact = props => (
       <title>Услуги</title>
     </Head>
     <Container>
+    <h2 className="text-3xl font-fancy pt-3 pr-12">Услуги.</h2>
           <h3 className="md:mt-8 mb-8 md:mb-12 text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-heavy font-sans tracking-tighter leading-tight">
-          Услуги актёрам
+          Актёрам
           </h3>
       <h2 className="text-3xl font-fancy pt-3 pr-12">Профессиональное портфолио</h2>
 <br/>
       <Row>
-      Создание профессионального набора медиафайлов, включающего в себя 5 обработанных актёрских портретов и визитку, специально разработанных с учётом рекомендаций ведущих российских и зарубежных кастинг-директоров. Съёмка проводится в нашей фотовидеостудии с двух камер в дружелюбной, максимально раскрепощающей актёра атмосфере. Вы получаете не только готовые материалы, но и все исходники (не менее двухсот фотографий).
-      </Row>
-      <Row>
-      Стоимость полного портфолио (фотографии и видеовизитка):
+      <div className="mb-8">
+       <p>Создание профессионального набора медиафайлов, включающего в себя 5 обработанных актёрских портретов и визитку, специально разработанных с учётом рекомендаций ведущих российских и зарубежных кастинг-директоров.</p>
+      <p>Съёмка проводится в нашей фотовидеостудии с двух камер в дружелюбной, максимально раскрепощающей актёра атмосфере.</p>
+      <p>Вы получаете не только готовые материалы, но и все исходники (не менее двухсот фотографий).</p>
+      <p>Продолжительность съёмки — 1 час.</p>
+      </div>
       </Row>
       <Row>        
-        <ColLeft>для учеников Школы-студии «DЕТИКИНО» </ColLeft>
+        <ColLeft>Портфолио фотографии + видовизитка</ColLeft>
         <ColRight>
           <p>
-          6000<span className="rub">₽</span>
+          <strong>8000</strong><span className="rub">₽</span>  |  <a href="#school" className="yellow"><strong>6000</strong><span className="rub">₽</span></a>
           </p>
         </ColRight>
       </Row>
-      <Row>        
-        <ColLeft>для актёров, не являющихся учениками Школы  </ColLeft>
-        <ColRight>
-          <p>
-          8000<span className="rub">₽</span>
-          </p>
-        </ColRight>
-      </Row>
-      <Row>        
-      Только фотографии:
-      </Row>  
       <Row>
-      <ColLeft>для учеников Школы-студии «DЕТИКИНО» </ColLeft>
+      <ColLeft>Только фотографии</ColLeft>
         <ColRight>
           <p>
-          4000<span className="rub">₽</span>
+          <strong>5000</strong><span className="rub">₽</span>  |  <a href="#school" className="yellow"><strong>4000</strong><span className="rub">₽</span></a>
           </p>
         </ColRight>
         </Row>
-      <Row>        
-        <ColLeft>для актёров, не являющихся учениками Школы  </ColLeft>
-        <ColRight>
-          <p>
-          5000<span className="rub">₽</span>
-          </p>
-        </ColRight>
-        </Row>
-      <Row>        
-      Только видеовизитка:
-      </Row>  
       <Row>      
-      <ColLeft>для учеников Школы-студии «DЕТИКИНО» </ColLeft>
+      <ColLeft>Только видеовизитка</ColLeft>
         <ColRight>
           <p>
-          4000<span className="rub">₽</span>
+          <strong>6000</strong><span className="rub">₽</span>  |  <a href="#school" className="yellow"><strong>4000</strong><span className="rub">₽</span></a>
           </p>
         </ColRight>
         </Row>
-      <Row>        
-        <ColLeft>для актёров, не являющихся учениками Школы  </ColLeft>
-        <ColRight>
-          <p>
-          6000<span className="rub">₽</span>
-          </p>
-        </ColRight>
-        </Row>
-      <Row>        
-        Продолжительность съёмки — 1 час.
-
-      </Row>
       <h2 className="text-3xl font-fancy pt-3 pr-12">
         Самопробы
       </h2>
       <br/>
 
-          Съёмка видеопроб (самопроб) на профессиональную камеру в студии. Вы получаете запись трёх дублей.
+          <p>Съёмка видеопроб (самопроб) на профессиональную камеру в студии.</p>
+          <p>Вы получаете запись трёх дублей.</p>
+          <p>Продолжительность съёмки — 1 час.</p>
           <br/><br/>
-       <Row>   
-        С преподавателем и оператором:
-        </Row>
       <Row>        
-        <ColLeft>для учеников Школы-студии «DЕТИКИНО» </ColLeft>
+        <ColLeft>С преподавателем и оператором</ColLeft>
         <ColRight>
           <p>
-          2500<span className="rub">₽</span>
+          <strong>3000</strong><span className="rub">₽</span>  |  <a href="#school" className="yellow"><strong>2500</strong><span className="rub">₽</span></a>
           </p>
         </ColRight>
         </Row>
       <Row>        
-        <ColLeft>для актёров, не являющихся учениками Школы  </ColLeft>
+        <ColLeft>Только с оператором</ColLeft>
         <ColRight>
           <p>
-          3000<span className="rub">₽</span>
+          <strong>1500</strong><span className="rub">₽</span>  |  <a href="#school" className="yellow"><strong>1000</strong><span className="rub">₽</span></a>
           </p>
         </ColRight>
         </Row>
-      <Row>         
-        Только с оператором:
-        </Row>
-      <Row>        
-        <ColLeft>для учеников Школы-студии «DЕТИКИНО» </ColLeft>
-        <ColRight>
-          <p>
-          1000<span className="rub">₽</span>
-          </p>
-        </ColRight>
-        </Row>
-      <Row>        
-        <ColLeft>для актёров, не являющихся учениками Школы  </ColLeft>
-        <ColRight>
-          <p>
-          1500<span className="rub">₽</span>
-          </p>
-        </ColRight>
-        </Row>
-      <Row>
-        Продолжительность съёмки — 1 час.
-        </Row>
-        Записаться на съёмку можно по телефону     +7 926 462 63 85.
-        Для записи пробы с преподавателем       —     +7 966 000 899 7.
+        <br/>
+        <p>Записаться на съёмку можно по телефону     <a href="+79264626385">+7 926 462 63 85</a>.</p>
+        <p>Для записи пробы с преподавателем       —     <a href="+79660008997">+7 966 000 899 7.</a></p>
+        <br/><p className="yellow nomar" id="school">*для учеников Школы-студии «DЕТИКИНО»</p>
       <h1 className="md:mt-8 mb-8 md:mb-12 text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-heavy font-sans tracking-tighter leading-tight">
-      Услуги киностудиям
+      Киностудиям
       </h1>
       <h2 className="text-3xl font-fancy pt-3 pr-12">Проведение проб</h2>
       <br/>
-      Мы можем взять на себя организацию проб к вашему фильму, подготовить списки и пригласить актёров. А также предоставить для проведения проб нашу фотостудию.
+      <p>Мы можем взять на себя организацию проб к вашему фильму, подготовить списки и пригласить актёров.</p>
+      <p>А также предоставить для проведения проб нашу фотостудию.</p>
       <br/><br/><br/>
   
       <h2 className="text-3xl font-fancy pt-3 pr-12">
@@ -176,7 +125,7 @@ const Contact = props => (
       </h2>
        <br/> 
       Мы готовы предоставить одного из наших преподавателей в качестве актёрского коуча для подготовки детей к съёмке, разбора и разучивания с ними сцены, настройки на неё.
-      <br/><br/>
+      <br/>
       Стоимость услуг кинокомпаниям оговаривается с учётом требуемых ресурсов и объёмов по телефону     +7 966 000 899 7.
     </Container>
   </Layout>
