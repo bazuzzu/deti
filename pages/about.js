@@ -11,7 +11,7 @@ import VkIcon from "../components/vk-icon"
 import classnames from "classnames"
 
 const Row = ({ children }) => (
-  <div className="flex flex-col md:flex-row font-light justify-center">
+  <div className="flex flex-col md:flex-row font-light">
     {children}
   </div>
 )
