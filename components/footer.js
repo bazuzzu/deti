@@ -26,7 +26,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800" href="#">
+                <a className="text-gray-600 hover:text-gray-800" href="/about">
                   О нас
                 </a>
               </li>
