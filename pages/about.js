@@ -59,7 +59,7 @@ const Contact = props => (
       </div>
       </ColLeft>
       <ColRight>
-        <img src="/assets/newlogo.png" />
+        <a href="http://detikino.ru" target="_blank"><img src="/assets/detikino_logo_word_white-school_custom.png" /></a>
       </ColRight>
       </Row>
     </div>  
