@@ -127,7 +127,7 @@
         return;
       }
 
-      disableAutoPlay();
+      //disableAutoPlay();
       // If it is mobile device redefine event to first touch point
       if (event.originalEvent.touches)
         event = event.originalEvent.touches[0];
@@ -419,10 +419,10 @@
         (function(lockedIndex) {
           item.click(function() {
             // Disable autoplay on time of transition.
-            disableAutoPlay();
+            //disableAutoPlay();
             currentSlide = lockedIndex + 1;
             switchSlide();
-            enableAutoPlay();
+            //enableAutoPlay();
           });
         })(i);
       }
