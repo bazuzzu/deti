@@ -11,17 +11,22 @@ import VkIcon from "../components/vk-icon"
 import classnames from "classnames"
 
 const Row = ({ children }) => (
-  <div className="flex flex-col md:flex-row font-light">
+  <div className="flex flex-col md:flex-row font-light mb-8 md:mb-16">
     {children}
   </div>
 )
-const ColLeft = ({ children }) => (
-  <div className="font-light font-fancy md:text-right align-top md:pr-20 text-gray-600 mb-2 md:w-5/12 fadein-left">
+const ColLeft = ({ children, background }) => (
+  <div
+    style={{
+      background: `center / cover no-repeat url(${background})`,
+    }}
+    className="font-light font-fancy md:text-left align-top lg:m-8 md:mr-10 lg:mr-20 text-gray-600 mb-2 md:w-5/12 fadein-left relative"
+  >
     {children}
   </div>
 )
 const ColRight = ({ children }) => (
-  <div className="font-light font-fancy mr-2 align-top md:pr-4 md:w-7/12 fadein">
+  <div className="aboutus font-light font-fancy my-12 mr-2 align-top md:pr-4 md:w-7/12 fadein">
     {children}
   </div>
 )
@@ -48,9 +53,14 @@ const Contact = props => (
     <h2 className="text-3xl font-fancy pt-3 pr-12">О нас</h2>
     <br/><br/><br/><br/>
       <Row>
+       <ColLeft> 
       <div className="mb-8">
       <p>Отдел кастинга <a className="yellow" href="http://detikino.ru"><strong>Школы-студии «DЕТИКИНО»</strong></a> занимается поиском возможностей для реализации учениками Школы полученных в ней знаний и навыков на профессиональных съёмочных площадках в России и за рубежом, представляет интересы воспитанников Школы перед киностудиями, согласовывает договор и оформляет документы актёра в случае утверждения на роль, «ведёт» их на протяжении съёмочного процесса и действия договора.</p>
       </div>
+      </ColLeft>
+      <ColRight>
+        <img src="/assets/newlogo.png" />
+      </ColRight>
       </Row>
     </div>  
     </Container>
