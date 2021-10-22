@@ -54,6 +54,7 @@
 * {
 	font-family:'Jost' !important;
 	font-weight: 200 !important;
+	font-size:
 }
 
 #sunday .sunday-tab>div {
@@ -1089,4 +1090,7 @@ body::-webkit-scrollbar {
 }
 .aboutus img {
 	margin: auto;
+}
+.flex-col {
+	font-size: 20px;
 }
