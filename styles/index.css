@@ -1091,6 +1091,6 @@ body::-webkit-scrollbar {
 .aboutus img {
 	margin: auto;
 }
-.flex-col {
+.flex-col, .services p, .about p {
 	font-size: 20px;
 }
