@@ -1081,11 +1081,11 @@ body::-webkit-scrollbar {
 }
 .justify-center strong {
 	font-weight: 400 !important;
-	width: 40px;
+	width: 50px;
 	display: inline-block;
 }
 .justify-center .yellow strong {
-	width: 40px;
+	width: 50px;
 	margin-left: 0.5rem;
 }
 .aboutus img {
