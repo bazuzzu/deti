@@ -708,8 +708,17 @@ $( document ).ready(function() {
 		var header0 = 'Агенты';
 		var header1 = 'Валентина Никитина +7 909 690 44 33';
 		var header2 = 'Вероника Мовсесян   +7 910 243 05 17';
-		var agemin = $('#ageinputmin').val();
-		var agemax = $('#ageinputmax').val();
+
+		var agearrprint = new Array();
+		$('.favorities img').each(function(){
+			var ageprint = $(this).attr('data-age');
+			agearrprint.push(ageprint);  
+		});
+		var agemin = Math.max.apply(Math,agearrprint);
+		var agemax = Math.min.apply(Math,agearrprint);
+	
+		//var agemin = $('#ageinputmin').val();
+		//var agemax = $('#ageinputmax').val();
 		var namegender = '';
 		if (($('.favorities img[data-gender="Девочки"]').length > 0)&&($('.favorities img[data-gender="Мальчики"]').length == 0)) {
 			namegender = 'girls';	
