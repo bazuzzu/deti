@@ -714,8 +714,8 @@ $( document ).ready(function() {
 			var ageprint = $(this).attr('data-age');
 			agearrprint.push(ageprint);  
 		});
-		var agemin = Math.max.apply(Math,agearrprint);
-		var agemax = Math.min.apply(Math,agearrprint);
+		var agemin = Math.min.apply(Math,agearrprint);
+		var agemax = Math.max.apply(Math,agearrprint);
 	
 		//var agemin = $('#ageinputmin').val();
 		//var agemax = $('#ageinputmax').val();
