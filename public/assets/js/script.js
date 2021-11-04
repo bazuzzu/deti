@@ -706,8 +706,22 @@ $( document ).ready(function() {
 
 	$('.genpdf').click(function () {
 		var header0 = 'Агенты';
-		var header1 = 'Валентина Никитина +7 909 690 443 3';
-		var header2 = 'Вероника Мовсесян   +7 966 000 899 7';		
+		var header1 = 'Валентина Никитина +7 909 690 44 33';
+		var header2 = 'Вероника Мовсесян   +7 910 243 05 17';
+		var agemin = $('#ageinputmin').val();
+		var agemax = $('#ageinputmax').val();
+		var namegender = '';
+		if (($('.favorities img[data-gender="Девочки"]').length > 0)&&($('.favorities img[data-gender="Мальчики"]').length == 0)) {
+			namegender = 'girls';	
+		} else if (($('.favorities img[data-gender="Мальчики"]').length >0)&&($('.favorities img[data-gender="Девочки"]').length == 0)) {
+			namegender = 'boys';
+		} else if (($('.favorities img[data-gender="Мальчики"]').length >0)&&($('.favorities img[data-gender="Девочки"]').length > 0)) {
+			namegender = 'boys_girls'	
+		}
+		var filename = 'detikino_'+agemin+'_'+agemax+'_'+namegender+'.pdf'; 
+		
+		console.log(namegender);
+
 		var img = new Image();
 		var totalPages = doc.internal.getNumberOfPages();
 		img.src = '/assets/detikino_logo_word_white.png'
@@ -722,7 +736,7 @@ $( document ).ready(function() {
 		doc.html(document.getElementById('pdfexport'), {
 			    margin: [0,30,18,36],
 				callback: function (doc) {
-					doc.save('Кастинг_лист.pdf');
+					doc.save(filename);
 		}});
 		$('.generating').show();
 		setTimeout(function(){

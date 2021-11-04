@@ -463,6 +463,7 @@ const Kids = ({ kids }) => {
                             open: true,
                             name,
                             surname,
+							gender,
                             photo,
                             age,
                             height,
@@ -487,6 +488,7 @@ const Kids = ({ kids }) => {
                           alt={`${name.trim()} ${surname.trim()}`}
 						  data-height={`${height}`}
 						  data-age={`${age}`}
+						  data-gender={`${gender}`}
 						  data-links={`${links}`}
 						  data-constitution={`${constitution}`}
 						  data-eyes={`${eyes}`}
